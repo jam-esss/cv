@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@font-face {
+  font-family: "Frick";
+  src: url(/assets/fonts/Frick.otf) format("opentype");
+  font-weight: bolder;
+}
+
+/* ENTIRE DOCUMENT SETTINGS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  color: var(--white-colour);
+}
+:root {
+  --bold-font: "Frick";
+  --normal-font: "Poppins";
+
+  --bg-colour: #000000;
+  --bg-colour-2: #161616;
+  --text-colour: #fff;
+  --colour-1: #eb5e28;
+  --colour-2: #a9471f;
+  --colour-3: #eb2828;
+  --colour-1-hover: #c14f22;
+  --white-colour: #cacaca;
+  --inactive-colour: #fff3;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-colour);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--colour-1);
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--colour-1-hover);
+}
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+body {
+  background: var(--bg-colour);
+  color: var(--text-colour);
+}
+section {
+  min-height: 100vh;
+  padding: 10rem 15%;
+}
+.hl {
+  background: linear-gradient(
+    270deg,
+    var(--colour-1) 10%,
+    var(--colour-3) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+/* BUTTONS */
+.btn-group {
+  display: flex;
+  gap: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 1rem 3rem;
+  background-color: var(--colour-1);
+  box-shadow: 0 0 25px var(--colour-1);
+  border-radius: 3rem;
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  color: black;
+  border: 2px solid transparent;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px var(--colour-1);
+}
+.btn-group a:nth-of-type(2) {
+  background-color: black;
+  color: var(--colour-1);
+  border: 2px solid var(--colour-1);
+  box-shadow: 0 0 25px transparent;
+}
+.btn-group a:nth-of-type(2):hover {
+  box-shadow: 0 0 25px var(--colour-1);
+  background-color: var(--colour-1);
+  color: black;
+}
+
+/* BODY */
+/* HEADER */
+header {
+  background: transparent;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.lang-content img {
+  width: 4rem;
+}
+
+/* LANDING  */
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15rem;
+}
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+.landing-content h1 {
+  font-size: clamp(6rem, 10vw, 8rem);
+  font-weight: 700;
+  margin-top: 1rem;
+  line-height: 1;
+}
+.landing-content h1,
+span {
+  font-family: var(--bold-font);
+  text-wrap: nowrap;
+}
+.landing-content h3 {
+  margin: 3rem 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+.landing img {
+  width: 35vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px var(--colour-1);
+  transition: 0.4 ease-in-out box-shadow;
+}
+.landing-img img:hover {
+  box-shadow: 0 0 25px var(--colour-1), 0 0 50px var(--colour-1);
+}
+
+/* MEDIA QUERIES (SIZING FOR ALL DISPLAYS) */
+
+@media (max-width: 1285px) {
+  /* LANDING */
+  .landing {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .landing-content {
+    align-items: center;
+    text-align: center;
+  }
+  .landing-content h1,
+  span {
+    text-wrap: wrap;
+    margin-top: 0rem;
+  }
+  .landing-content h3 {
+    margin: 1rem 0;
+  }
+  .landing-img img {
+    width: clamp(20rem, 28vw, 30vw);
+  }
+}
