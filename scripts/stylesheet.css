@@ -78,7 +78,7 @@ section {
   background-color: var(--colour-1);
   box-shadow: 0 0 25px var(--colour-1);
   border-radius: 3rem;
-  font-size: clamp(1rem, 2vw, 1.8rem);
+  font-size: clamp(1rem, 3vw, 2rem);
   color: black;
   border: 2px solid transparent;
   font-weight: 600;
@@ -157,6 +157,30 @@ span {
   box-shadow: 0 0 25px var(--colour-1), 0 0 50px var(--colour-1);
 }
 
+/* ABOUT SECTION */
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  background: var(--bg-colour-2);
+}
+.about-content h2 {
+  font-size: 7rem;
+  text-align: left;
+}
+.about-content p {
+  font-size: 1.8rem;
+}
+.about-content h2,
+span {
+  font-family: var(--bold-font);
+}
+.about-content .btn {
+  margin: 3rem 0;
+}
+
 /* MEDIA QUERIES (SIZING FOR ALL DISPLAYS) */
 
 @media (max-width: 1285px) {
@@ -179,5 +203,14 @@ span {
   }
   .landing-img img {
     width: clamp(20rem, 28vw, 30vw);
+  }
+  /* ABOUT ME */
+  .about {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .about h2 {
+    text-align: center;
+    margin: 2rem 0;
   }
 }
