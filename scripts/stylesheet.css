@@ -4,8 +4,12 @@
   src: url(/assets/fonts/Frick.otf) format("opentype");
   font-weight: bolder;
 }
-
-/* ENTIRE DOCUMENT SETTINGS */
+/*
+  _                           _                  
+ / | _  _     _ _  _  _ _/_  /_`_ _/__/_._  _   _
+/_.'/_//_ /_// / //_'/ //   ._//_'/  / // //_/_\ 
+                                           _/
+*/
 * {
   margin: 0;
   padding: 0;
@@ -54,13 +58,15 @@ body {
 }
 section {
   min-height: 100vh;
-  padding: 10rem 15%;
+  padding: 5rem 10%;
+  display: flex;
 }
 h1,
 h2,
 h3,
 span {
   font-family: var(--bold-font);
+  font-weight: 700;
 }
 .hl {
   background: linear-gradient(
@@ -107,6 +113,35 @@ span {
   color: black;
 }
 
+/* SOCIAL ICONS */
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid var(--colour-1);
+  border-radius: 50%;
+  color: var(--colour-1);
+  margin: 3rem 0.5rem;
+  transition: 0.3s ease-in-out;
+}
+.social-icons a:hover {
+  color: var(--text-colour);
+  background-color: var(--colour-1);
+  transform: scale(1.2) translateY(-5px);
+  box-shadow: 0 0 25px var(--colour-1);
+  cursor: pointer;
+}
+
+/*
+  _         
+ /_)_   _/  
+/_)/_//_//_/
+         _/
+*/
+
 /* HEADER */
 header {
   background: transparent;
@@ -130,10 +165,8 @@ header {
   width: 4.5rem;
 }
 
-/* BODY */
 /* LANDING SECTION */
 .landing {
-  display: flex;
   justify-content: center;
   align-items: center;
   gap: 15rem;
@@ -145,17 +178,12 @@ header {
   text-align: right;
 }
 .landing-content h1 {
-  font-size: clamp(6rem, 10vw, 8rem);
-  font-weight: 700;
+  font-size: clamp(6rem, 5vw, 8rem);
   margin-top: 1rem;
   line-height: 1;
+  white-space: nowrap;
 }
-.landing-content h1,
-span {
-  font-family: var(--bold-font);
-  text-wrap: nowrap;
-}
-.landing-content h3 {
+.landing-content h2 {
   margin: 3rem 0;
   font-size: clamp(2rem, 5vw, 4rem);
 }
@@ -163,15 +191,16 @@ span {
   width: 35vw;
   border-radius: 50%;
   box-shadow: 0 0 25px var(--colour-1);
-  transition: 0.4 ease-in-out box-shadow;
+  transition: 0.3s ease-in-out;
 }
 .landing-img img:hover {
+  transform: scale(1.01);
+  border-radius: 45%;
   box-shadow: 0 0 25px var(--colour-1), 0 0 50px var(--colour-1);
 }
 
 /* ABOUT SECTION */
 .about {
-  display: flex;
   justify-content: center;
   align-items: center;
   gap: 10rem;
@@ -190,23 +219,27 @@ span {
 
 /* EXPERIENCE SECTION */
 .experience {
-  display: flex;
-  flex-direction: column;
-  justify-content: top;
-  align-items: center;
-  gap: 10rem;
+  display: block;
 }
-.experience h2 {
-  font-size: clamp(3rem, 10vw, 8rem);
-  align-items: top;
+.experience-content h2 {
+  font-size: clamp(5rem, 10vw, 6rem);
+}
+
+/* PROJECTS SECTION */
+.projects {
+  display: block;
+}
+.projects-content h2 {
+  font-size: clamp(5rem, 10vw, 6rem);
 }
 
 /* CONTACT SECTION */
 .contact {
+  display: block;
   background-color: var(--bg-colour-2);
 }
-.contact h3 {
-  font-size: 6rem;
+.contact h2 {
+  font-size: clamp(5rem, 10vw, 6rem);
   margin-bottom: 3rem;
   color: var(--text-colour);
 }
@@ -231,8 +264,37 @@ span {
   resize: none;
 }
 
-/* MEDIA QUERIES (SIZING FOR ALL DISPLAYS) */
+/* FOOTER */
+.footer {
+  background-color: var(--bg-colour);
+  padding: 30px 0;
+}
+.footer .social-icons {
+  text-align: center;
+}
+.footer ul {
+  text-align: center;
+  font-size: 1.8rem;
+}
+.footer ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer ul li a {
+  color: var(--white-colour);
+  border-bottom: 3px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover {
+  border-bottom: 3px solid var(--colour-1);
+}
+.footer .copyright {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
 
+/* MEDIA QUERIES (SIZING FOR SMALLER DISPLAYS) */
 @media (max-width: 1285px) {
   /* LANDING */
   .landing {
@@ -245,15 +307,16 @@ span {
   }
   .landing-content h1,
   span {
-    text-wrap: wrap;
+    white-space: wrap;
     margin-top: 0rem;
   }
-  .landing-content h3 {
+  .landing-content h2 {
     margin: 1rem 0;
   }
   .landing-img img {
-    width: clamp(20rem, 28vw, 30vw);
+    width: clamp(25rem, 28vw, 30vw);
   }
+
   /* ABOUT ME */
   .about {
     flex-direction: column-reverse;
