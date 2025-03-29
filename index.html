@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>James Pink-Gyett 🇬🇧</title>
+    <title>🇬🇧 James Pink-Gyett</title>
     <link rel="stylesheet" href="scripts/stylesheet.css" />
     <link rel="icon" href="assets/icons/favicon.gif" />
     <link
@@ -44,15 +44,81 @@
       <div class="about-content">
         <h2>About <span class="hl">Me</span></h2>
         <p>
-          Hardworking and loyal, with a strong passion for learning and
-          improvement. I always strive to do my best in and out of the
-          workplace. A logical thinker at the core, I enjoy being challenged and
-          figuring out how to solve issues. My interest has lied in technology
-          from a young age and now I'm working hard to reach my goal of becoming
-          a software developer and eventually a full-stack developer.
+          Born in the United Kingdom, I am hardworking and loyal with a strong
+          passion for learning and improvement. I aim to always do my best in
+          and out of the workplace. Driven by logical thinking, I enjoy being
+          challenged and figuring out how to solve issues. My interest has been
+          in technology and computing from a young age, and I am actively
+          pursuing my goal of becoming a software developer, and someday a
+          full-stack developer. In my free time, I enjoy doing computing related
+          activities, exploration or learning. I am fluent in British English,
+          and I am also learning Dutch.
         </p>
         <a href="#experience" class="btn">My Experience</a>
       </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="experience-content">
+        <h2>My <span class="hl">Experience</span></h2>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h3>Contact <span class="hl">Me</span></h3>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <div class="input-group">
+          <div class="input-box">
+            <input
+              type="hidden"
+              name="access_key"
+              value="eb0be72e-f989-4967-9cbc-c0d584a11c63"
+            />
+            <input
+              type="text"
+              minlength="3"
+              name="Full Name"
+              placeholder="Name / Company Name*"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              minlength="10"
+              placeholder="Email*"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <input
+              type="tel"
+              minlength="6"
+              name="Phone Number"
+              placeholder="Phone Number"
+            />
+            <input type="text" name="subject" placeholder="Subject*" required />
+          </div>
+        </div>
+
+        <div class="input-group-2">
+          <textarea
+            name="message"
+            placeholder="Your Message*"
+            cols="30"
+            rows="10"
+            minlength="30"
+            required
+          ></textarea>
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="hidden"
+            style="display: none"
+          />
+          <input type="submit" value="Send Message" class="btn" />
+        </div>
+      </form>
     </section>
 
     <script src="assets/js/main.js"></script>
