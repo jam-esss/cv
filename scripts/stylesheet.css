@@ -27,6 +27,7 @@
 
   --bg-colour: #000000;
   --bg-colour-2: #161616;
+  --bg-colour-3: #2c2c2c;
   --text-colour: #fff;
   --colour-1: #eb5e28;
   --colour-2: #a9471f;
@@ -72,6 +73,15 @@ span {
   background: linear-gradient(
     270deg,
     var(--colour-1) 10%,
+    var(--colour-3) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+.hl2 {
+  background: linear-gradient(
+    180deg,
+    var(--colour-2) 10%,
     var(--colour-3) 100%
   );
   background-clip: text;
@@ -221,8 +231,67 @@ header {
 .experience {
   display: block;
 }
-.experience-content h2 {
+.experience h2 {
   font-size: clamp(5rem, 10vw, 6rem);
+}
+.expout {
+  overflow-x: auto;
+  padding-top: 12.5rem;
+  padding-bottom: 1.5rem;
+}
+.expout h5 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+.expin {
+  display: flex;
+  flex-direction: row;
+  min-width: fit-content;
+  width: 100%;
+  padding-bottom: 3rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 0.5rem dotted var(--colour-1);
+  gap: 3rem;
+}
+.expin .exp-event {
+  position: relative;
+  color: var(--colour-2);
+  background: var(--bg-colour-3);
+  text-align: center;
+  min-width: 27.5rem;
+  max-width: 30rem;
+  min-height: 30rem;
+  max-height: 30rem;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  transition: ease-in-out 0.3s;
+}
+.exp-event:hover {
+  background: var(--bg-colour-2);
+  color: var(--text-colour);
+  box-shadow: 0 0 5px var(--colour-1), 0 0 10px var(--colour-1);
+  scale: 1.05;
+}
+.expin .exp-event img {
+  position: absolute;
+  width: 6.5rem;
+  border: 1rem;
+  border-radius: 50%;
+  background: var(--bg-colour-3);
+  bottom: -2.5rem;
+  left: 37.5%;
+}
+.expin h3 {
+  font-size: 2.5rem;
+}
+.expin h5 {
+  font-size: 1.5rem;
+}
+.expin p {
+  padding: 0.75rem;
+  font-size: 1.5rem;
 }
 
 /* PROJECTS SECTION */
