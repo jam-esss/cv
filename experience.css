@@ -142,7 +142,7 @@ nav ul li:nth-child(3) a {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 6;
+  z-index: 101;
 }
 .hamburger span {
   display: block;
@@ -186,7 +186,7 @@ nav ul li:nth-child(3) a {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
-    z-index: 5;
+    z-index: 100;
   }
   nav ul li a {
     color: var(--text-colour);
