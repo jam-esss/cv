@@ -3,6 +3,9 @@
 V1
 ![V1](https://github.com/user-attachments/assets/d9aebc22-44eb-42b6-891a-bef594a048c2)
 
+V2
+<img width="2879" height="1799" alt="cvproject-bg" src="https://github.com/user-attachments/assets/db8debd8-d068-4faf-8684-77f41074e01a" />
+
 
 ## ℹ️ Overview
 
