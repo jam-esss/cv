@@ -3,214 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🇳🇱 James Pink-Gyett</title>
-    <link rel="stylesheet" href="scripts/stylesheet.css" />
-    <link rel="icon" href="assets/icons/favicon.gif" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <title>🏠 James Pink-Gyett</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="icon" href="assets/icons/flag-nl.png" />
+    <link rel="alternate" href="https://jamespg.uk/index.html" hreflang="en" />
+    <link rel="alternate" href="https://jamespg.uk/index-nl.html" hreflang="nl" />
   </head>
-
   <body>
-    <header>
-      <div class="lang-content">
-        <a href="index.html"><img src="assets/icons/flag-gb.png" alt="GB" /></a>
+    <nav>
+      <div>
+        <input type="checkbox" id="nav-toggle" class="hidden" />
+        <label for="nav-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul>
+          <li><a href="index-nl.html">Home</a></li>
+          <li><a href="about-nl.html">Over Mij</a></li>
+          <li><a href="experience-nl.html">Mijn Ervaring</a></li>
+          <li><a href="projects-nl.html">Projecten</a></li>
+          <li>
+            <a href="index.html" draggable="false"
+              ><img src="assets/icons/flag-gb.png" draggable="false"
+            /></a>
+          </li>
+        </ul>
       </div>
-    </header>
+    </nav>
 
-    <section class="landing" id="landing">
-      <div class="landing-content">
-        <h1><span class="hl">James </span>Pink-Gyett</h1>
+    <section class="home">
+      <div class="title-ctr">
+        <h1 class="glitch" data-text="James Pink-Gyett">James Pink-Gyett</h1>
         <h2>
-          <span class="hl" id="jobtitle">title</span> bij
-          <span class="hl" id="compname">company</span>
+          <span class="hl" id="jobtitle">Functietitel</span> bij
+          <span class="hl" id="compname">Bedrif</span>
         </h2>
-
-        <div class="btn-group">
-          <a href="#about" class="btn">Over Mij</a>
-          <a href="#contact" class="btn">Contact</a>
+        <div class="btn-container">
+          <a href="about-nl.html">
+            <button type="button"><span>Over Mij_</span></button>
+          </a>
         </div>
       </div>
-
-      <div class="landing-img">
-        <img src="assets/images/PFP.png" alt="" />
-      </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="about-content">
-        <h2>Over <span class="hl">Mij</span></h2>
-        <p>
-          Ik ben geboren in het Verenigd Koninkrijk, hardwerkend en loyaal met
-          een sterke passie voor leren en verbeteren. Ik streef ernaar om altijd
-          mijn best te doen, zowel op, als buiten de werkplek. Ik word gedreven
-          door logisch denken en vind het leuk om uitgedaagd te worden en uit te
-          zoeken hoe ik problemen kan oplossen. Ik ben al van jongs af aan
-          geïnteresseerd in technologie en computers, en ik streefnb nu er
-          actief naar om softwareontwikkelaar te worden, en op een dag een
-          full-stack ontwikkelaar. In mijn vrije tijd doe ik graag
-          computergerelateerde activiteiten, onderzoek of leer ik. Ik spreek
-          vloeiend Brits Engels en ben ook Nederlands aan het leren.
-        </p>
-        <a href="#experience" class="btn">Mijn Ervaring</a>
-      </div>
-    </section>
-
-    <section class="experience" id="experience">
-      <h2>MIJN <span class="hl">ERVARING</span></h2>
-      <div class="expout">
-        <div class="expin">
-          <div class="exp-event">
-            <h3 class="hl" id="exp-jobt">Student</h3>
-            <h5 id="exp-compn">Universiteit van Essex</h5>
-            <h5>Maart 2025 - Aanwezig</h5>
-            <p>
-              Vaardigheden: Planning, timemanagement, academisch schrijven,
-              onderzoek.
-            </p>
-            <img src="assets/logos/UOEOicon.png" alt="" />
-          </div>
-          <div class="exp-event">
-            <h3 class="hl" id="exp-jobt">Productiemedewerker</h3>
-            <h5 id="exp-compn">CNH Industrial</h5>
-            <h5>September 2023 - Maart 2025</h5>
-            <p>Vaardigheden: Teamwerk, timemanagement, manueel hanteren.</p>
-            <img src="assets/logos/CNHIcon.png" alt="" />
-          </div>
-          <div class="exp-event">
-            <h3 class="hl2" id="exp-jobt">Teamlid</h3>
-            <h5 id="exp-compn">KFC</h5>
-            <h5>Februari 2022 - Juni 2023</h5>
-            <p>Vaardigheden: Voedselhygiëne, teamwerk, communicatie.</p>
-            <img src="assets/logos/KFCIcon.png" alt="" />
-          </div>
-          <div class="exp-event">
-            <h3 class="hl2" id="exp-jobt">Student</h3>
-            <h5 id="exp-compn">PROCAT</h5>
-            <h5>September 2021 - Juli 2022</h5>
-            <p>Vaardigheden: Handmatig werken, onderzoek.</p>
-            <img src="assets/logos/PROCATIcon.png" alt="" />
-          </div>
-          <div class="exp-event">
-            <h3 class="hl2" id="exp-jobt">Student</h3>
-            <h5 id="exp-compn">South Essex College</h5>
-            <h5>September 2021 - Juli 2022</h5>
-            <p>Vaardigheden: Handmatig werken, onderzoek.</p>
-            <img src="assets/logos/secolIcon.png" alt="" />
-          </div>
-          <div class="exp-event">
-            <h3 class="hl2" id="exp-jobt">Student</h3>
-            <h5 id="exp-compn">Woodlands School</h5>
-            <h5>September 2015 - Maart 2020</h5>
-            <p>
-              Vaardigheden: Onderzoek, academisch schrijven, revisie, planning.
-            </p>
-            <img src="assets/logos/WOODLANDSIcon.png" alt="" />
-          </div>
-          <div class="exp-event">
-            <h3 class="hl2" id="exp-jobt">Cadet</h3>
-            <h5 id="exp-compn">Sea Cadet Corps</h5>
-            <h5>2015 - 2019</h5>
-            <p>
-              Vaardigheden: Leiderschap, teamwerk, discipline, communicatie,
-              respect, eerlijkheid, loyaliteit.
-            </p>
-            <img src="assets/logos/scadetIcon.png" alt="" />
-          </div>
+    <footer>
+      <div class="footer-ctr">
+        <p>© James Pink-Gyett</p>
+        <div class="socials-ctr">
+          <a href="https://www.linkedin.com/in/jamesssss/" draggable="false"
+            ><img src="assets/icons/linkedin-icon.svg" draggable="false"
+          /></a>
+          <a href="https://github.com/jam-esss" draggable="false"
+            ><img src="assets/icons/github-icon.svg" draggable="false"
+          /></a>
         </div>
-        <h5>scroll -></h5>
       </div>
-    </section>
-
-    <section class="projects" id="projects" style="display: none">
-      <div class="projects-content">
-        <h2>Mijn <span class="hl">Projecten</span></h2>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <h2>Contact <span class="hl">Me</span></h2>
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <div class="input-group">
-          <div class="input-box">
-            <input
-              type="hidden"
-              name="access_key"
-              value="eb0be72e-f989-4967-9cbc-c0d584a11c63"
-            />
-            <input
-              type="text"
-              minlength="3"
-              name="Full Name"
-              placeholder="Naam / Bedrijfsnaam*"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              minlength="10"
-              placeholder="Email*"
-              required
-            />
-          </div>
-
-          <div class="input-box">
-            <input
-              type="tel"
-              minlength="6"
-              name="Phone Number"
-              placeholder="Telefoonnummer"
-            />
-            <input type="text" name="subject" placeholder="Subject*" required />
-          </div>
-        </div>
-
-        <div class="input-group-2">
-          <textarea
-            name="message"
-            placeholder="Uw Bericht*"
-            cols="30"
-            rows="10"
-            minlength="30"
-            required
-          ></textarea>
-          <input
-            type="checkbox"
-            name="botcheck"
-            class="hidden"
-            style="display: none"
-          />
-          <input type="submit" value="Verstuur Bericht" class="btn" />
-        </div>
-      </form>
-    </section>
-
-    <footer class="footer">
-      <div class="social-icons">
-        <a href="https://github.com/jam-esss"><i class="bx bxl-github"></i></a>
-        <a href="https://www.linkedin.com/in/jamesssss/"
-          ><i class="bx bxl-linkedin-square"></i
-        ></a>
-      </div>
-
-      <ul class="list">
-        <li>
-          <a href="#landing">Home</a>
-        </li>
-        <li>
-          <a href="#about">Over Mij</a>
-        </li>
-        <li>
-          <a href="#experience">Mijn Eraving</a>
-        </li>
-        <li>
-          <a href="#contact">Contact Me</a>
-        </li>
-      </ul>
-      <p class="copyright">© James Pink-Gyett ¦ All Rights Reserved</p>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script src="scripts/home-nl.js"></script>
   </body>
 </html>
