@@ -288,6 +288,7 @@ footer {
   position: absolute;
   width: 100%;
   bottom: 0;
+  z-index: 5;
 }
 .footer-ctr {
   position: absolute;
@@ -310,7 +311,7 @@ footer {
   text-transform: capitalize;
   text-wrap: nowrap;
   font-size: 0.5rem;
-  color: var(--text-colour-3);
+  color: var(--hl-colour-1);
 }
 .socials-ctr {
   display: flex;
