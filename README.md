@@ -22,7 +22,10 @@ https://github.com/jam-esss
 
 ## 📃 Credits
 
-Font- "Outfit", Designed by Smartsheet Inc, Rodrigo Fuenzalida
+V1 Font- "Frick", Designed by Dennis Grauel
+https://github.com/dennisgrauel/Frick
+
+V2 Font- "Outfit", Designed by Smartsheet Inc, Rodrigo Fuenzalida
 https://fonts.google.com/share?selection.family=Outfit
 
 ## ✅ License
