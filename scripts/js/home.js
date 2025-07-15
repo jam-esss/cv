@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   if (!document.getElementById("jobtitle") || !document.getElementById("compname")) return;
 
-  fetch("experience-nl.html")
+  fetch("experience/index.html")
     .then((response) => response.text())
     .then((html) => {
       const parser = new DOMParser();

@@ -6,17 +6,17 @@
 ██████   ██████   ██████  ██████  ██      ██ ███████ ██   ████    ██    */
 @font-face {
   font-family: "Outfit Regular";
-  src: url("../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Outfit Medium";
-  src: url("../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
   font-family: "Outfit Bold";
-  src: url("../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
   font-weight: 700;
 }
 /* DEFAULT VALUES */
@@ -125,7 +125,7 @@ nav ul li a img {
 
 /* Change number based on page
 (e.g. 1= home, 2=about, etc) */
-nav ul li:nth-child(4) a {
+nav ul li:nth-child(2) a {
   color: var(--hl-colour-3);
 }
 
@@ -198,7 +198,7 @@ nav ul li:nth-child(4) a {
   }
   /* Change number based on page
 (e.g. 1= home, 2=about, etc) */
-  nav ul li:nth-child(4) a {
+  nav ul li:nth-child(2) a {
     color: var(--hl-colour-1);
   }
   #nav-toggle:checked ~ ul {
@@ -206,169 +206,102 @@ nav ul li:nth-child(4) a {
     pointer-events: auto;
   }
 }
+
 /*
-██████  ██████   ██████       ██ ███████  ██████ ████████ ███████ 
-██   ██ ██   ██ ██    ██      ██ ██      ██         ██    ██      
-██████  ██████  ██    ██      ██ █████   ██         ██    ███████ 
-██      ██   ██ ██    ██ ██   ██ ██      ██         ██         ██ 
-██      ██   ██  ██████   █████  ███████  ██████    ██    ███████
+ █████  ██████   ██████  ██    ██ ████████ 
+██   ██ ██   ██ ██    ██ ██    ██    ██    
+███████ ██████  ██    ██ ██    ██    ██    
+██   ██ ██   ██ ██    ██ ██    ██    ██    
+██   ██ ██████   ██████   ██████     ██    
 */
-.projects {
+.about {
   justify-content: center;
   align-items: center;
   gap: 3rem;
   flex-wrap: wrap;
   flex-direction: column;
 }
-.projects-ctr {
+.about-ctr {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
   width: 100%;
   max-width: 50rem;
-  padding: 5rem 2rem;
+  padding: 2rem;
   border-radius: 10px;
 }
-.projects-ctr h1 {
+.about-ctr h1 {
   font-size: 2.5rem;
   text-transform: uppercase;
   padding-bottom: 0.5rem;
 }
-.projects-ctr span {
+.about-ctr p {
+  font-size: 0.8rem;
+  color: var(--text-colour-2);
+}
+.about-ctr span {
   font-family: var(--bold-font);
   text-transform: uppercase;
 }
-.projects-ctr ul {
+
+.interests-ctr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding-top: 1rem;
+}
+.interests-ctr h1 {
+  padding: 0 0 1rem 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.interests-ctr ul {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  gap: 5rem;
-  padding: 4rem 0 10rem 0;
+  gap: 1.5rem;
+  padding: 0.5rem;
+  overflow: scroll;
+  max-height: 12rem;
   list-style: none;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
+  justify-content: flex-start;
 }
-.projects-ctr ul li {
+.interests-ctr li {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  gap: 1rem;
-  transition: ease-in-out 0.5s;
-  width: 100%;
-  height: 100%;
+  height: 3.5rem;
+  width: 3.5rem;
+  position: relative;
 }
-.projects-ctr ul li a {
+.interests-ctr .square-corner-cut {
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  color: var(--hl-colour-1);
+  font-size: 2rem;
+  transition: color 0.5s;
+  width: 100%;
+  height: 100%;
+  filter: var(--svg-colour-1);
 }
-.projectbg-ctr {
+.interests-ctr .interests-icon {
   position: relative;
-  width: 41.3rem; /* 1.67 × 24.7rem = 41.3rem */
-  height: 24.7rem; /* Pick any base value, keep the ratio */
-  display: inline-block;
-}
-.projectbg-ctr .projectbg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  -webkit-mask-image: url("assets/svg/rectangular-box-mask.svg");
-  mask-image: url("assets/svg/rectangular-box-mask.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  background: var(--bg-colour, #2a2d31);
-}
-
-.projectbg-ctr .projectborder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-  filter: var(--svg-colour-2);
-}
-.projectbg-ctr {
-  position: relative;
-  width: 30.975rem; /* 1.67 × 24.7rem = 41.3rem */
-  height: 18.525rem; /* Pick any base value, keep the ratio */
-  display: inline-block;
-}
-@media screen and (max-width: 700px) {
-  .projectbg-ctr {
-    width: 20.65rem;
-    height: 12.35rem;
-    transition: 0.5s ease-in-out;
-  }
-  .projecttxt-ctr {
-    min-height: unset;
-  }
-}
-.projectbg-ctr .projectbg,
-.projectbg-ctr .projectborder {
-  width: 100%;
-  height: 100%;
-}
-.languages-ctr {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  z-index: 5;
-  padding: 0.5rem 0.5rem 0 0;
-}
-
-.languages-ctr .language {
+  z-index: 1;
   width: 2rem;
   height: 2rem;
   filter: var(--svg-colour-1);
-  transition: transform 0.3s ease;
 }
-.projecttxt-ctr {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  min-height: 3.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-}
-.projecttxt-ctr h2 {
-  font-size: 1.5rem;
-  color: var(--text-colour);
-  text-align: center;
-  text-transform: uppercase;
-  font-family: var(--bold-font);
-  transition: color 0.5s ease;
-}
-.projects-ctr ul li.project-centered {
-  transform: scale(1.05);
-  border-radius: 14px;
-  z-index: 2;
-}
-.projects-ctr ul li.project-centered .projectbg-ctr .projectborder,
-.projects-ctr ul li.project-centered .projectbg-ctr .language {
+.interests-ctr li:hover .square-corner-cut,
+.interests-ctr li:hover .interests-icon {
   filter: var(--svg-colour-3);
-  transition: ease-in-out 0.5s;
+  transition: 0.5s ease;
+  scale: 1.1;
 }
 
 /*
@@ -379,7 +312,7 @@ nav ul li:nth-child(4) a {
 ██       ██████   ██████     ██    ███████ ██   ██ 
 */
 footer {
-  position: sticky;
+  position: absolute;
   width: 100%;
   bottom: 0;
   z-index: 5;

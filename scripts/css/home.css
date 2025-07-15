@@ -6,17 +6,17 @@
 ██████   ██████   ██████  ██████  ██      ██ ███████ ██   ████    ██    */
 @font-face {
   font-family: "Outfit Regular";
-  src: url("../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Outfit Medium";
-  src: url("../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
   font-family: "Outfit Bold";
-  src: url("../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  src: url("../../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
   font-weight: 700;
 }
 /* DEFAULT VALUES */
@@ -70,7 +70,6 @@ section {
   display: flex;
   background-color: var(--bg-colour);
   min-height: 100vh;
-  height: auto;
   padding: 1rem 1rem;
 }
 .hl {
@@ -126,7 +125,7 @@ nav ul li a img {
 
 /* Change number based on page
 (e.g. 1= home, 2=about, etc) */
-nav ul li:nth-child(3) a {
+nav ul li:nth-child(1) a {
   color: var(--hl-colour-3);
 }
 
@@ -199,7 +198,7 @@ nav ul li:nth-child(3) a {
   }
   /* Change number based on page
 (e.g. 1= home, 2=about, etc) */
-  nav ul li:nth-child(3) a {
+  nav ul li:nth-child(1) a {
     color: var(--hl-colour-1);
   }
   #nav-toggle:checked ~ ul {
@@ -209,119 +208,73 @@ nav ul li:nth-child(3) a {
 }
 
 /*
-███████ ██   ██ ██████  ███████ ██████  ██ ███████ ███    ██  ██████ ███████ 
-██       ██ ██  ██   ██ ██      ██   ██ ██ ██      ████   ██ ██      ██      
-█████     ███   ██████  █████   ██████  ██ █████   ██ ██  ██ ██      █████   
-██       ██ ██  ██      ██      ██   ██ ██ ██      ██  ██ ██ ██      ██      
-███████ ██   ██ ██      ███████ ██   ██ ██ ███████ ██   ████  ██████ ███████ 
+██   ██  ██████  ███    ███ ███████ 
+██   ██ ██    ██ ████  ████ ██      
+███████ ██    ██ ██ ████ ██ █████   
+██   ██ ██    ██ ██  ██  ██ ██      
+██   ██  ██████  ██      ██ ███████ 
 */
-.experience {
+.home {
   justify-content: center;
   align-items: center;
   gap: 3rem;
   flex-wrap: wrap;
   flex-direction: column;
+  background-image: url("../../assets/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 100rem rgba(0, 0, 0, 0.9) inset;
 }
-.experience-ctr {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  width: 100%;
-  max-width: 50rem;
-  padding: 5rem 2rem;
-  border-radius: 10px;
-}
-.experience-ctr h1 {
-  font-size: 2.5rem;
+
+.title-ctr h1 {
+  font-size: 3rem;
   text-transform: uppercase;
-  padding-bottom: 0.5rem;
 }
-.experience-ctr span {
+.title-ctr h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.title-ctr span {
   font-family: var(--bold-font);
   text-transform: uppercase;
 }
-.experience-ctr ul {
+
+.btn-container {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 5rem;
-  padding: 4rem 0 10rem 0;
-  list-style: none;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
+  margin-top: 3rem;
 }
-.experience-ctr ul li {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  gap: 1rem;
-  transition: ease-in-out 0.5s;
-}
-.experience-ctr ul li.experience-centered {
-  transform: scale(1.05);
-  border-radius: 14px;
-  z-index: 2;
-}
-.experience-ctr ul li.experience-centered .logo-ctr .square-corner-cut,
-.experience-ctr ul li.experience-centered .logo-ctr .logo {
-  filter: var(--svg-colour-3);
-  transition: ease-in-out 0.5s;
-}
-.logo-ctr {
+.btn-container button {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.logo-ctr .square-corner-cut {
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--hl-colour-1);
-  font-size: 2rem;
+  overflow: hidden;
+  height: 3rem;
+  width: 9rem;
+  background: linear-gradient(45deg, transparent 0.6rem, var(--hl-colour-2) 0);
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-right: 2px solid var(--hl-colour-3);
   transition: color 0.5s;
-  width: 5rem;
-  height: 5rem;
-  filter: var(--svg-colour-1);
-  position: relative;
 }
-.logo-ctr .logo {
+.btn-container button::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  filter: var(--svg-colour-1);
+  background: linear-gradient(45deg, transparent 0.6rem, var(--hl-colour-3) 0);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1;
 }
-.jobinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.btn-container button:hover::before {
+  opacity: 1;
 }
-.jobinfo h2 {
-  font-size: 1.5rem;
-  font-family: var(--bold-font);
-  text-transform: uppercase;
-  padding-bottom: 0.5rem;
+.btn-container button span {
+  position: relative;
+  z-index: 2;
 }
-.jobinfo h3 {
-  font-size: 1rem;
-  font-family: var(--medium-font);
-  text-transform: uppercase;
-  padding-bottom: 0.5rem;
-}
-.jobinfo p {
-  font-size: 0.8rem;
-  font-family: var(--normal-font);
-  padding-bottom: 0.5rem;
-  line-height: 1.5;
+.btn-container button:hover {
+  cursor: pointer;
 }
 
 /*
@@ -332,7 +285,7 @@ nav ul li:nth-child(3) a {
 ██       ██████   ██████     ██    ███████ ██   ██ 
 */
 footer {
-  position: sticky;
+  position: absolute;
   width: 100%;
   bottom: 0;
   z-index: 5;
