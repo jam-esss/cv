@@ -76,48 +76,6 @@ section {
   }
 }
 /* HAMBURGER MENU */
-@media (max-width: 600px) {
-  .hamburger {
-    display: flex;
-    position: absolute;
-    top: 1.2rem;
-    right: 2rem;
-  }
-  nav ul {
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--hl-colour-3);
-    justify-content: center;
-    align-items: flex-end;
-    gap: 2rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-    z-index: 100;
-  }
-  nav ul li a {
-    color: var(--text-colour);
-    font-family: var(--bold-font);
-    font-size: 1rem;
-  }
-  nav ul li a:hover {
-    color: var(--hl-colour-1);
-    transition: 0.5s;
-  }
-  /* Change number based on page
-(e.g. 1= home, 2=about, etc) */
-  nav ul li:nth-child(1) a {
-    color: var(--hl-colour-1);
-  }
-  #nav-toggle:checked ~ ul {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
 
 /*
 ███    ██  █████  ██    ██ 
@@ -205,6 +163,48 @@ nav ul li:nth-child(1) a {
   transform: rotate(-45deg) translate(6px, -6px);
   background: var(--text-colour);
 }
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+  }
+  nav ul {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--hl-colour-3);
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 100;
+  }
+  nav ul li a {
+    color: var(--text-colour);
+    font-family: var(--bold-font);
+    font-size: 1rem;
+  }
+  nav ul li a:hover {
+    color: var(--hl-colour-1);
+    transition: 0.5s;
+  }
+  /* Change number based on page
+(e.g. 1= home, 2=about, etc) */
+  nav ul li:nth-child(1) a {
+    color: var(--hl-colour-1);
+  }
+  #nav-toggle:checked ~ ul {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
 
 /*
 ██   ██  ██████  ███    ███ ███████ 
@@ -222,7 +222,7 @@ nav ul li:nth-child(1) a {
   background-image: url("../../assets/images/background.jpg");
   background-size: cover;
   background-position: center;
-  box-shadow: 0 0 100rem rgba(0, 0, 0, 0.9) inset;
+  box-shadow: 0 0 1000px rgba(0, 0, 0, 0.9) inset;
 }
 
 .title-ctr h1 {

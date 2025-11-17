@@ -47,14 +47,6 @@
   --hl-colour-1: #86cecb;
   --hl-colour-2: #137a7f;
   --hl-colour-3: #e12886;
-
-  /* SVG COLOURS (THANKS TO https://codepen.io/sosuke/pen/Pjoqqp)*/
-  --svg-colour-1: invert(77%) sepia(23%) saturate(483%) hue-rotate(129deg) brightness(97%)
-    contrast(88%);
-  --svg-colour-2: invert(17%) sepia(53%) saturate(5491%) hue-rotate(172deg) brightness(106%)
-    contrast(85%);
-  --svg-colour-3: invert(28%) sepia(99%) saturate(1565%) hue-rotate(305deg) brightness(87%)
-    contrast(103%);
 }
 html {
   font-size: 16px;
@@ -77,6 +69,11 @@ section {
   background: linear-gradient(270deg, var(--hl-colour-1) 10%, var(--hl-colour-2) 100%);
   background-clip: text;
   color: transparent;
+}
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 24px;
+  }
 }
 
 /*
@@ -264,11 +261,13 @@ nav ul li:nth-child(3) a {
 .experience-ctr ul li.experience-centered {
   transform: scale(1.05);
   border-radius: 14px;
-  z-index: 2;
 }
-.experience-ctr ul li.experience-centered .logo-ctr .square-corner-cut,
+.experience-ctr ul li.experience-centered .logo-ctr .square-corner-cut {
+  stroke: var(--hl-colour-3);
+  transition: ease-in-out 0.5s;
+}
 .experience-ctr ul li.experience-centered .logo-ctr .logo {
-  filter: var(--svg-colour-3);
+  fill: var(--hl-colour-3);
   transition: ease-in-out 0.5s;
 }
 .logo-ctr {
@@ -287,7 +286,7 @@ nav ul li:nth-child(3) a {
   transition: color 0.5s;
   width: 5rem;
   height: 5rem;
-  filter: var(--svg-colour-1);
+  stroke: var(--hl-colour-1);
   position: relative;
 }
 .logo-ctr .logo {
@@ -295,10 +294,11 @@ nav ul li:nth-child(3) a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 0.5rem;
   z-index: 1;
   width: 100%;
   height: 100%;
-  filter: var(--svg-colour-1);
+  fill: var(--hl-colour-1);
 }
 .jobinfo {
   display: flex;
@@ -368,28 +368,15 @@ footer {
   justify-content: center;
   height: 100%;
 }
-.socials-ctr img {
+.socials-ctr svg {
   width: 1.5rem;
   height: 1.5rem;
-  filter: var(--svg-colour-1);
+  fill: var(--hl-colour-1);
   transition: 0.5s ease;
 }
-.socials-ctr img:hover {
+.socials-ctr svg:hover {
   transform: scale(1.1);
-}
-
-/*
-███    ███ ███████ ██████  ██  █████       ██████  ██    ██ ███████ ██████  ██ ███████ ███████ 
-████  ████ ██      ██   ██ ██ ██   ██     ██    ██ ██    ██ ██      ██   ██ ██ ██      ██      
-██ ████ ██ █████   ██   ██ ██ ███████     ██    ██ ██    ██ █████   ██████  ██ █████   ███████ 
-██  ██  ██ ██      ██   ██ ██ ██   ██     ██ ▄▄ ██ ██    ██ ██      ██   ██ ██ ██           ██ 
-██      ██ ███████ ██████  ██ ██   ██      ██████   ██████  ███████ ██   ██ ██ ███████ ███████ 
-                                              ▀▀                                               
-*/
-@media screen and (min-width: 1024px) {
-  html {
-    font-size: 24px;
-  }
+  fill: var(--hl-colour-3);
 }
 
 /*
