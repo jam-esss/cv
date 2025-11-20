@@ -22,11 +22,14 @@ https://github.com/jam-esss
 
 ## 📃 Credits
 
-V1 Font- "Frick", Designed by Dennis Grauel
+V1 Font- "Frick", Designed by Dennis Grauel.
 https://github.com/dennisgrauel/Frick
 
-V2 Font- "Outfit", Designed by Smartsheet Inc, Rodrigo Fuenzalida
+V2 Font- "Outfit", Designed by Smartsheet Inc, Rodrigo Fuenzalida.
 https://fonts.google.com/share?selection.family=Outfit
+
+V2 Inspiration- Pathumd's 2021 Personal Site.
+https://github.com/pathumd/2021_personal_site
 
 SVG Repo LLC- Used for lots of the icons and logos.
 https://www.svgrepo.com/

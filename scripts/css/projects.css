@@ -47,14 +47,6 @@
   --hl-colour-1: #86cecb;
   --hl-colour-2: #137a7f;
   --hl-colour-3: #e12886;
-
-  /* SVG COLOURS (THANKS TO https://codepen.io/sosuke/pen/Pjoqqp)*/
-  --svg-colour-1: invert(77%) sepia(23%) saturate(483%) hue-rotate(129deg) brightness(97%)
-    contrast(88%);
-  --svg-colour-2: invert(17%) sepia(53%) saturate(5491%) hue-rotate(172deg) brightness(106%)
-    contrast(85%);
-  --svg-colour-3: invert(28%) sepia(99%) saturate(1565%) hue-rotate(305deg) brightness(87%)
-    contrast(103%);
 }
 html {
   font-size: 16px;
@@ -76,6 +68,11 @@ section {
   background: linear-gradient(270deg, var(--hl-colour-1) 10%, var(--hl-colour-2) 100%);
   background-clip: text;
   color: transparent;
+}
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 24px;
+  }
 }
 
 /*
@@ -300,7 +297,7 @@ nav ul li:nth-child(4) a {
   height: 100%;
   pointer-events: none;
   z-index: 2;
-  filter: var(--svg-colour-2);
+  stroke: var(--hl-colour-2);
 }
 .projectbg-ctr {
   position: relative;
@@ -338,7 +335,7 @@ nav ul li:nth-child(4) a {
 .languages-ctr .language {
   width: 2rem;
   height: 2rem;
-  filter: var(--svg-colour-1);
+  fill: var(--hl-colour-1);
   transition: transform 0.3s ease;
 }
 .projecttxt-ctr {
@@ -365,9 +362,12 @@ nav ul li:nth-child(4) a {
   border-radius: 14px;
   z-index: 2;
 }
-.projects-ctr ul li.project-centered .projectbg-ctr .projectborder,
+.projects-ctr ul li.project-centered .projectbg-ctr .projectborder {
+  stroke: var(--hl-colour-3);
+  transition: ease-in-out 0.5s;
+}
 .projects-ctr ul li.project-centered .projectbg-ctr .language {
-  filter: var(--svg-colour-3);
+  fill: var(--hl-colour-3);
   transition: ease-in-out 0.5s;
 }
 
@@ -414,28 +414,15 @@ footer {
   font-size: 0.5rem;
   color: var(--hl-colour-1);
 }
-.socials-ctr img {
+.socials-ctr svg {
   width: 1.5rem;
   height: 1.5rem;
-  filter: var(--svg-colour-1);
+  fill: var(--hl-colour-1);
   transition: 0.5s ease;
 }
-.socials-ctr img:hover {
+.socials-ctr svg:hover {
   transform: scale(1.1);
-}
-
-/*
-███    ███ ███████ ██████  ██  █████       ██████  ██    ██ ███████ ██████  ██ ███████ ███████ 
-████  ████ ██      ██   ██ ██ ██   ██     ██    ██ ██    ██ ██      ██   ██ ██ ██      ██      
-██ ████ ██ █████   ██   ██ ██ ███████     ██    ██ ██    ██ █████   ██████  ██ █████   ███████ 
-██  ██  ██ ██      ██   ██ ██ ██   ██     ██ ▄▄ ██ ██    ██ ██      ██   ██ ██ ██           ██ 
-██      ██ ███████ ██████  ██ ██   ██      ██████   ██████  ███████ ██   ██ ██ ███████ ███████ 
-                                              ▀▀                                               
-*/
-@media screen and (min-width: 1024px) {
-  html {
-    font-size: 24px;
-  }
+  fill: var(--hl-colour-3);
 }
 
 /*
