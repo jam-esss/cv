@@ -307,6 +307,43 @@ nav ul li:nth-child(2) a {
   scale: 1.1;
   fill: var(--hl-colour-3);
 }
+.btn-container {
+  display: flex;
+  margin-top: 2rem;
+}
+.btn-container button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  width: 9rem;
+  background: linear-gradient(45deg, transparent 0.6rem, var(--hl-colour-2) 0);
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-right: 2px solid var(--hl-colour-3);
+  transition: color 0.5s;
+}
+.btn-container button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 0.6rem, var(--hl-colour-3) 0);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1;
+}
+.btn-container button:hover::before {
+  opacity: 1;
+}
+.btn-container button span {
+  position: relative;
+  z-index: 2;
+}
+.btn-container button:hover {
+  cursor: pointer;
+}
 
 /*
 ███████  ██████   ██████  ████████ ███████ ██████  
@@ -323,16 +360,26 @@ footer {
 }
 .footer-ctr {
   position: absolute;
-  height: 6rem;
   bottom: 0;
   overflow: hidden;
+  height: 6rem;
   width: 4rem;
-  left: 1rem;
+  right: 1rem;
   font-size: 1rem;
   text-transform: uppercase;
-  border-left: 2px solid var(--hl-colour-3);
-  background: linear-gradient(-135deg, transparent 0.6rem, var(--hl-colour-2) 0);
+  border-right: 2px solid var(--hl-colour-3);
+  background: linear-gradient(135deg, transparent 0.6rem, var(--hl-colour-2) 0);
   transition: color 0.5s;
+}
+.footer-ctr p {
+  position: absolute;
+  writing-mode: sideways-lr;
+  top: 30%;
+  right: 0;
+  text-transform: capitalize;
+  text-wrap: nowrap;
+  font-size: 0.3rem;
+  color: var(--hl-colour-1);
 }
 .socials-ctr {
   display: flex;
@@ -341,15 +388,6 @@ footer {
   align-items: center;
   justify-content: center;
   height: 100%;
-}
-.footer-ctr p {
-  position: absolute;
-  writing-mode: vertical-rl;
-  top: 15%;
-  text-transform: capitalize;
-  text-wrap: nowrap;
-  font-size: 0.5rem;
-  color: var(--hl-colour-1);
 }
 .socials-ctr svg {
   width: 1.5rem;

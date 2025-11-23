@@ -305,11 +305,11 @@ footer {
 .footer-ctr p {
   position: absolute;
   writing-mode: sideways-lr;
-  top: 15%;
+  top: 30%;
   right: 0;
   text-transform: capitalize;
   text-wrap: nowrap;
-  font-size: 0.5rem;
+  font-size: 0.3rem;
   color: var(--hl-colour-1);
 }
 .socials-ctr {
