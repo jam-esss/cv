@@ -218,19 +218,21 @@ nav ul li:nth-child(3) a {
   gap: 3rem;
   flex-wrap: wrap;
   flex-direction: column;
+  text-align: center;
 }
 .experience-ctr {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   width: 100%;
   max-width: 50rem;
-  padding: 5rem 2rem;
+  padding: 2rem 2rem 0;
   border-radius: 10px;
 }
 .experience-ctr h1 {
   font-size: 2.5rem;
+  text-align: left;
   text-transform: uppercase;
   padding-bottom: 0.5rem;
 }
@@ -238,90 +240,107 @@ nav ul li:nth-child(3) a {
   font-family: var(--bold-font);
   text-transform: uppercase;
 }
-.experience-ctr ul {
+
+.timeline-scroll {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: 2px;
+  user-select: none;
+  -moz-user-select: none;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 5rem;
-  padding: 4rem 0 10rem 0;
-  list-style: none;
-  justify-content: center;
-  align-items: flex-start;
+  overflow-x: hidden;
+  padding: 2rem;
   width: 100%;
+  background-color: var(--bg-colour-2);
+  background: linear-gradient(135deg, transparent 0.6rem, var(--bg-colour-2) 0);
+  border-bottom: 2px solid var(--hl-colour-3);
 }
-.experience-ctr ul li {
+.timeline-scroll {
+  cursor: grab;
+}
+.timeline-scroll.dragging {
+  cursor: grabbing;
+}
+.timeline-item {
+  scroll-snap-align: center;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  gap: 1rem;
-  transition: ease-in-out 0.5s;
+  align-items: center;
+  flex: 0 0 100%;
 }
-.experience-ctr ul li.experience-centered {
-  transform: scale(1.05);
-  border-radius: 14px;
+.timeline-item.active {
+  transform: scale(1.1);
 }
-.experience-ctr ul li.experience-centered .logo-ctr .square-corner-cut {
-  stroke: var(--hl-colour-3);
-  transition: ease-in-out 0.5s;
+.item-box {
+  stroke: var(--hl-colour-1);
 }
-.experience-ctr ul li.experience-centered .logo-ctr .logo {
-  fill: var(--hl-colour-3);
-  transition: ease-in-out 0.5s;
+.item-logo {
+  fill: var(--hl-colour-1);
 }
-.logo-ctr {
+
+.timeline-item a {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.logo-ctr .square-corner-cut {
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--hl-colour-1);
-  font-size: 2rem;
-  transition: color 0.5s;
+  display: inline-block;
   width: 5rem;
   height: 5rem;
-  stroke: var(--hl-colour-1);
-  position: relative;
 }
-.logo-ctr .logo {
+.timeline-item a svg {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.timeline-item a svg.item-logo {
+  width: 70%;
+  height: 70%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0.5rem;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  fill: var(--hl-colour-1);
+  position: absolute;
 }
-.jobinfo {
+.timeline-item.active {
+  transform: scale(1.1);
+  transition: transform 1s ease-in-out;
+}
+.timeline-item.active .item-box {
+  stroke: var(--hl-colour-3);
+  transition: 1s ease-in-out;
+}
+.item-logo:hover {
+  fill: var(--hl-colour-3);
+  transition: 0.5s ease;
+}
+
+.scroll-hint {
+  width: 3rem;
+  display: block;
+  fill: var(--hl-colour-1);
+  transition: 0.3s ease;
+  margin: 0 auto;
+}
+
+.detail-panel {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
 }
-.jobinfo h2 {
+.detail-panel h1 {
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+.detail-panel h2 {
   font-size: 1.5rem;
-  font-family: var(--bold-font);
   text-transform: uppercase;
   padding-bottom: 0.5rem;
 }
-.jobinfo h3 {
+.detail-panel p {
   font-size: 1rem;
-  font-family: var(--medium-font);
-  text-transform: uppercase;
-  padding-bottom: 0.5rem;
-}
-.jobinfo p {
-  font-size: 0.8rem;
-  font-family: var(--normal-font);
-  padding-bottom: 0.5rem;
-  line-height: 1.5;
 }
 
 /*
@@ -332,7 +351,7 @@ nav ul li:nth-child(3) a {
 ██       ██████   ██████     ██    ███████ ██   ██ 
 */
 footer {
-  position: sticky;
+  position: absolute;
   width: 100%;
   bottom: 0;
   z-index: 5;

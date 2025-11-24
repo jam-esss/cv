@@ -7,15 +7,17 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((html) => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
-      const firstJob = doc.querySelector(".experience-ctr ul li .jobinfo");
+      const firstJob = doc.querySelector(".timeline-scroll .timeline-item");
       if (firstJob) {
-        const jobTitle = firstJob.querySelector("h2")?.textContent?.trim() || "";
-        const companyName = firstJob.querySelector("h3")?.textContent?.trim() || "";
+        const jobTitle =
+          (firstJob.dataset && firstJob.dataset.title && firstJob.dataset.title.trim()) || "";
+        const companyName =
+          (firstJob.dataset && firstJob.dataset.company && firstJob.dataset.company.trim()) || "";
         document.getElementById("jobtitle").textContent = jobTitle;
         document.getElementById("compname").textContent = companyName;
       }
     })
     .catch(() => {
-      console.error("Failed to fetch or parse experience.html");
+      console.error("Failed to fetch or parse experience/index.html");
     });
 });
