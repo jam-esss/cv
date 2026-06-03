@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+// Selection
+::selection {
+    background-color: $pink;
+    color: white;
+}
+
+::-moz-selection {
+    background-color: $pink;
+    color: white;
+}
+
+// Scrollbars
+html {
+    scrollbar-width: thin;
+    scrollbar-color: $pink #e5e7eb;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e5e7eb;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $pink;
+    border-radius: 999px;
+    border: 2px solid #e5e7eb;
+}

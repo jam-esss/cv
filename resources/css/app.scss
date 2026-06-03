@@ -1,3 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// Tailwind & Google Fonts
+@use 'imports';
+
+// Variables
+@use 'variables' as *;
+
+// Base styles
+@use 'globals' as *;
+
+// Browser tweaks
+@use 'browser' as *;
+
+// Typography / Classes
+@use 'classes' as *;

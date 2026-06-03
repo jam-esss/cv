@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.jamespg-font-boldest {
+    font-family: $bold-font;
+    font-weight: 800;
+}
+
+.jamespg-font-bold {
+    font-family: $bold-font;
+    font-weight: 450;
+}
