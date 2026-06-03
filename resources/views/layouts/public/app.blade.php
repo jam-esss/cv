@@ -6,7 +6,7 @@
     <title>@yield('title', 'My Site')</title>
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.scss', 'resources/js/app.js'])
 
     @stack('styles')
 </head>
