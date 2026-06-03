@@ -1,6 +1,6 @@
 @extends('layouts.public.app')
 
-@section('title', 'James Pink-Gyett')
+@section('title', 'James Pink-Gyett_')
 
 @push('styles')
 @endpush
