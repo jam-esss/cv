@@ -18,7 +18,7 @@
                 </h1>
 
                 <h2 class="jamespg-font-boldest mt-4 text-xl md:text-3xl uppercase tracking-[0.3em] text-[var(--dark-cyan)]">
-                    Junior Web Developer_
+                    {{ $mostRecentJob->title }}
                 </h2>
 
                 <div

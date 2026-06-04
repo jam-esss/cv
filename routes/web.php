@@ -1,13 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\public\PublicSite;
 use Illuminate\Support\Facades\Route;
 
 
 // PUBLIC
-Route::get('/', function () {
-    return view('public.index');
-});
+Route::get('/', PublicSite::class);
 
 // ADMIN
 Route::get('/dashboard', function () {
