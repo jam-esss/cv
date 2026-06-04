@@ -11,7 +11,7 @@ $grey-2: #32363B;
 $bold-font: 'Oxanium', 'Mochiy Pop One', sans-serif;
 
 // Layout Variables
-$navbar-height: 0px;
+$navbar-height: 64px;
 
 // CSS Custom Properties
 :root {
@@ -22,4 +22,18 @@ $navbar-height: 0px;
     --red: #C60121;
     --grey-1: #2A2D31;
     --grey-2: #32363B;
+
+    --navbar-height: #{$navbar-height};
+}
+
+
+// Animations
+.blink {
+    animation: blink 1.5s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }

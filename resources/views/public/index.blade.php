@@ -6,10 +6,10 @@
 @endpush
 
 @section('content')
-    <section class="relative min-h-screen overflow-hidden bg-black" id="landing">
+    <section class="landing-section relative flex items-center overflow-hidden bg-black" id="landing">
 
         <!-- Content -->
-        <div class="relative z-10 flex min-h-screen items-center px-8 lg:px-24">
+        <div class="relative z-10 flex items-center px-8 lg:px-24">
             <div>
                 <h1 class="jamespg-font-boldest leading-none uppercase text-[var(--light-cyan)] text-[clamp(4rem,12vw,12rem)]">
                     James
@@ -18,13 +18,18 @@
                 </h1>
 
                 <h2 class="jamespg-font-boldest mt-4 text-xl md:text-3xl uppercase tracking-[0.3em] text-[var(--dark-cyan)]">
+                    //
                     {{ $mostRecentJob->title }}
+                    at
+                    <span class="md:text-3xl text-[var(--pink)]">{{ $mostRecentJob->establishment }}</span><span
+                        class="blink">_</span>
                 </h2>
 
                 <div
                     class="mt-8 h-1 w-60 bg-gradient-to-r from-[var(--light-cyan)] via-[var(--pink)] to-[var(--dark-cyan)]"></div>
 
-                <a href="#about" class="group mt-8 inline-flex items-stretch overflow-hidden border border-[var(--dark-cyan)] transition-all duration-300">
+                <a href="#about"
+                   class="group mt-8 inline-flex items-stretch overflow-hidden border border-[var(--dark-cyan)] transition-all duration-300">
                     <span
                         class="jamespg-font-boldest flex items-center px-8 py-4 text-md font-bold uppercase tracking-[0.25em] text-[var(--dark-cyan)] transition-colors duration-300 group-hover:bg-[var(--pink)] group-hover:text-white">
                         About Me_
@@ -36,7 +41,7 @@
                     </span>
                 </a>
 
-                <div class="mt-8 flex">
+                <div class="mt-8 flex select-none">
                     <div class="flex mr-10">
                         <div class="w-0.5 bg-[var(--dark-cyan)]"></div>
 
@@ -62,7 +67,7 @@
                         </span>
                             <span
                                 class="uppercase text-[var(--dark-cyan)] tracking-widest text-sm md:text-base">
-                            <?= (new DateTime())->diff(new DateTime("2004-01-01"))->y; ?>
+                                {{ (new DateTime())->diff(new DateTime("2004-01-01"))->y }}
                         </span>
                         </div>
                     </div>
@@ -70,6 +75,9 @@
 
             </div>
         </div>
+    </section>
+    <section id="about">
+
     </section>
 @endsection
 
