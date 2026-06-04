@@ -8,12 +8,12 @@
             <div class="absolute left-[calc(30%+21px)] bottom-[10px] right-0 h-[1px] bg-[var(--dark-cyan)]"></div>
         </div>
 
-        <div class="flex items-center gap-6 z-10">
+        <div class="flex items-center gap-6 z-10 select-none">
             <span class="text-xl font-bold uppercase tracking-wider text-[var(--light-cyan)]">
                 JPG_
             </span>
             <div
-                class="hidden sm:flex flex-col text-[10px] font-mono leading-none tracking-widest text-[var(--pink)] uppercase">
+                class="hidden sm:flex flex-col text-[10px] font-mono leading-none tracking-widest text-[var(--pink)] animate-pulse uppercase">
                 <span>
                     SYSTEM ONLINE
                 </span>
@@ -26,31 +26,25 @@
         <!-- CENTER: Navigation Links (Hidden on mobile, flex on desktop) -->
         <div class="hidden md:flex items-center h-full text-xs uppercase tracking-[0.2em] z-10">
             <a href="#landing" class="px-4 py-2 text-[var(--light-cyan)] hover:text-[var(--pink)] transition-colors">
-                Home
+                {{ __('enums.navbar.home') }}
             </a>
             <span class="text-[var(--dark-cyan)] select-none">
                 |
             </span>
             <a href="#about" class="px-4 py-2 text-[var(--light-cyan)] hover:text-[var(--pink)] transition-colors">
-                About
+                {{ __('enums.about_me') }}
             </a>
             <span class="text-[var(--dark-cyan)] select-none">
                 |
             </span>
             <a href="#experience" class="px-4 py-2 text-[var(--light-cyan)] hover:text-[var(--pink)] transition-colors">
-                Experience
+                {{ __('enums.navbar.experience') }}
             </a>
             <span class="text-[var(--dark-cyan)] select-none">
                 |
             </span>
             <a href="#projects" class="px-4 py-2 text-[var(--light-cyan)] hover:text-[var(--pink)] transition-colors">
-                Projects
-            </a>
-            <span class="text-[var(--dark-cyan)] select-none">
-                |
-            </span>
-            <a href="#contact" class="px-4 py-2 text-[var(--light-cyan)] hover:text-[var(--pink)] transition-colors">
-                Contact
+                {{ __('enums.navbar.projects') }}
             </a>
         </div>
 
@@ -74,9 +68,11 @@
             </div>
 
             <div
-                class="border-l-2 border-r-2 border-[var(--pink)] px-4 py-1 flex items-center gap-1.5 bg-[var(--pink)]/5">
+                class="border-l-2 border-r-2 border-[var(--pink)] px-4 py-1 flex items-center gap-1.5 bg-[var(--pink)]/5 select-none">
                 <span class="text-[var(--pink)] opacity-60">//</span>
-                <span class="text-white tracking-widest font-bold"><?= date('Y') ?></span>
+                <span class="text-white tracking-widest font-bold">
+                    <span id="clock"></span>
+                </span>
             </div>
 
             <button @click="mobileMenuOpen = !mobileMenuOpen"
@@ -128,13 +124,6 @@
                 </span>
                 Projects
             </a>
-            <a @click="mobileMenuOpen = false" href="#contact"
-               class="text-[var(--light-cyan)] hover:text-[var(--pink)] transition-colors flex items-center gap-2">
-                <span class="text-[var(--pink)] text-xs font-mono">
-                    05//
-                </span>
-                Contact
-            </a>
         </div>
 
         <div class="border-t border-[var(--dark-cyan)]/30 pt-8 mt-auto flex flex-col gap-3">
@@ -158,3 +147,16 @@
         </div>
     </div>
 </nav>
+<script>
+    function startClock() {
+        const clock = document.getElementById('clock');
+        setInterval(() => {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            clock.textContent = `${hours}:${minutes}:${seconds}`;
+        }, 1000);
+    }
+    startClock();
+</script>

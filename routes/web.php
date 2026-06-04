@@ -6,7 +6,11 @@ use Illuminate\Support\Facades\Route;
 
 
 // PUBLIC
-Route::get('/', PublicSite::class);
+Route::redirect('/', '/en');
+
+Route::prefix('{locale}')->where(['locale' => 'en|ja|nl'])->group(function () {
+    Route::get('/', PublicSite::class);
+});
 
 // ADMIN
 Route::get('/dashboard', function () {

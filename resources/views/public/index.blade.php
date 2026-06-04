@@ -12,7 +12,7 @@
         <div class="relative z-10 flex items-center px-8 lg:px-24">
             <div>
                 <h1 class="jamespg-font-boldest leading-none uppercase text-[var(--light-cyan)] text-[clamp(4rem,12vw,12rem)]">
-                    James
+                    {{ __('enums.fn') }}
                     <br>
                     Pink-Gyett
                 </h1>
@@ -20,7 +20,7 @@
                 <h2 class="jamespg-font-boldest mt-4 text-xl md:text-3xl uppercase tracking-[0.3em] text-[var(--dark-cyan)]">
                     //
                     {{ $mostRecentJob->title }}
-                    at
+                    {{ __('enums.at') }}
                     <span class="md:text-3xl text-[var(--pink)]">{{ $mostRecentJob->establishment }}</span><span
                         class="blink">_</span>
                 </h2>
@@ -32,7 +32,7 @@
                    class="group mt-8 inline-flex items-stretch overflow-hidden border border-[var(--dark-cyan)] transition-all duration-300">
                     <span
                         class="jamespg-font-boldest flex items-center px-8 py-4 text-md font-bold uppercase tracking-[0.25em] text-[var(--dark-cyan)] transition-colors duration-300 group-hover:bg-[var(--pink)] group-hover:text-white">
-                        About Me_
+                        {{ __('enums.about_me') }}_
                     </span>
 
                     <span
@@ -48,7 +48,7 @@
                         <div class="ml-4 flex flex-col gap-1">
                         <span
                             class="uppercase text-[var(--dark-cyan)] tracking-widest text-sm md:text-base">
-                            Location
+                            {{ __('enums.location') }}_
                         </span>
                             <span
                                 class="uppercase text-[var(--dark-cyan)] tracking-widest text-sm md:text-base">
@@ -63,7 +63,7 @@
                         <div class="ml-4 flex flex-col gap-1">
                         <span
                             class="uppercase text-[var(--dark-cyan)] tracking-widest text-sm md:text-base">
-                            Age
+                            {{ __('enums.age') }}_
                         </span>
                             <span
                                 class="uppercase text-[var(--dark-cyan)] tracking-widest text-sm md:text-base">
