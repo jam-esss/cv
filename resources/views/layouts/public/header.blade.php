@@ -54,15 +54,22 @@
                     class="text-[9px] tracking-wider text-[var(--dark-cyan)] opacity-70 uppercase mr-1">
                     LANG_ID //
                 </span>
-                <a href="?lang=en" class="text-[var(--red)] font-bold tracking-wide transition-colors hover:text-white">
+                <a href="{{ url('en') }}"
+                   class="text-[var(--red)] tracking-wide transition-colors hover:text-white {{ app()->getLocale() === 'en' ? 'font-bold underline' : 'opacity-70' }}">
                     EN
                 </a>
-                <span class="text-[var(--dark-cyan)] opacity-40 select-none">/</span>
-                <a href="?lang=ja" class="text-[var(--red)] tracking-wide transition-colors hover:text-[var(--yellow)]">
+                <span class="text-[var(--dark-cyan)] opacity-40 select-none">
+                    /
+                </span>
+                <a href="{{ url('ja') }}"
+                   class="text-[var(--red)] tracking-wide transition-colors hover:text-[var(--yellow)] {{ app()->getLocale() === 'ja' ? 'font-bold underline' : 'opacity-70' }}">
                     JA
                 </a>
-                <span class="text-[var(--dark-cyan)] opacity-40 select-none">/</span>
-                <a href="?lang=nl" class="text-[var(--red)] tracking-wide transition-colors hover:text-[var(--yellow)]">
+                <span class="text-[var(--dark-cyan)] opacity-40 select-none">
+                    /
+                </span>
+                <a href="{{ url('nl') }}"
+                   class="text-[var(--red)] tracking-wide transition-colors hover:text-[var(--yellow)] {{ app()->getLocale() === 'nl' ? 'font-bold underline' : 'opacity-70' }}">
                     NL
                 </a>
             </div>
@@ -131,16 +138,16 @@
                 SELECT_INTERFACE_LANG //
             </span>
             <div class="flex gap-4 font-mono text-sm">
-                <a href="?lang=en"
-                   class="text-[var(--red)] font-bold tracking-wide">
-                    EN_
+                <a href="{{ url('en') }}"
+                   class="{{ app()->getLocale() === 'en' ? 'text-[var(--red)] font-bold' : 'text-[var(--light-cyan)] opacity-70 hover:opacity-100' }} tracking-wide transition-opacity">
+                    EN
                 </a>
-                <a href="?lang=ja"
-                   class="text-[var(--light-cyan)] opacity-70 tracking-wide hover:opacity-100 transition-opacity">
+                <a href="{{ url('ja') }}"
+                   class="{{ app()->getLocale() === 'ja' ? 'text-[var(--red)] font-bold' : 'text-[var(--light-cyan)] opacity-70 hover:opacity-100' }} tracking-wide transition-opacity">
                     JA
                 </a>
-                <a href="?lang=nl"
-                   class="text-[var(--light-cyan)] opacity-70 tracking-wide hover:opacity-100 transition-opacity">
+                <a href="{{ url('nl') }}"
+                   class="{{ app()->getLocale() === 'nl' ? 'text-[var(--red)] font-bold' : 'text-[var(--light-cyan)] opacity-70 hover:opacity-100' }} tracking-wide transition-opacity">
                     NL
                 </a>
             </div>
@@ -158,5 +165,6 @@
             clock.textContent = `${hours}:${minutes}:${seconds}`;
         }, 1000);
     }
+
     startClock();
 </script>
