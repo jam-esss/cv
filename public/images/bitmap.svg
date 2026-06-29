@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <rect
+        x="0.5"
+        y="0.5"
+        width="23"
+        height="23"
+        fill="none"
+        stroke="black"
+    />
+
+    <line
+        x1="0.5"
+        y1="0.5"
+        x2="23.5"
+        y2="23.5"
+        stroke="black"
+    />
+
+    <line
+        x1="0.5"
+        y1="23.5"
+        x2="23.5"
+        y2="0.5"
+        stroke="black"
+    />
+</svg>
