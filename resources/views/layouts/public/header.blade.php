@@ -1,14 +1,15 @@
-<nav x-data="{ mobileMenuOpen: false }" class="cyber-nav fixed top-0 left-0 z-50 w-full bg-black/90 px-6 lg:px-12">
+<nav x-data="{ mobileMenuOpen: false }"
+     class="cyber-nav fixed top-0 left-0 z-50 w-full bg-black/90 px-6 lg:px-12 select-none">
     <div class="mx-auto flex h-full max-w-7xl items-center justify-between relative">
 
-        <div class="absolute inset-x-0 bottom-0 h-4 pointer-events-none opacity-80 select-none z-50">
+        <div class="absolute inset-x-0 bottom-0 h-4 pointer-events-none opacity-80  z-50">
             <div class="absolute left-0 bottom-0 w-[30%] h-[1px] bg-[var(--dark-cyan)]"></div>
             <div
                 class="absolute left-[30%] bottom-0 w-6 h-[1px] bg-[var(--dark-cyan)] origin-left rotate-[30deg]"></div>
             <div class="absolute left-[calc(30%+21px)] bottom-[10px] right-0 h-[1px] bg-[var(--dark-cyan)]"></div>
         </div>
 
-        <div class="flex items-center gap-6 z-10 select-none">
+        <div class="flex items-center gap-6 z-10 ">
             <span class="text-xl font-bold uppercase tracking-wider text-[var(--light-cyan)]">
                 JPG_
             </span>
@@ -28,19 +29,19 @@
             <a href="#landing" class="px-4 py-2 text-[var(--light-cyan)] hover:text-[var(--pink)] transition-colors">
                 {{ __('enums.navbar.home') }}
             </a>
-            <span class="text-[var(--dark-cyan)] select-none">
+            <span class="text-[var(--dark-cyan)] ">
                 |
             </span>
             <a href="#about" class="px-4 py-2 text-[var(--light-cyan)] hover:text-[var(--pink)] transition-colors">
                 {{ __('enums.about_me') }}
             </a>
-            <span class="text-[var(--dark-cyan)] select-none">
+            <span class="text-[var(--dark-cyan)] ">
                 |
             </span>
             <a href="#experience" class="px-4 py-2 text-[var(--light-cyan)] hover:text-[var(--pink)] transition-colors">
                 {{ __('enums.navbar.experience') }}
             </a>
-            <span class="text-[var(--dark-cyan)] select-none">
+            <span class="text-[var(--dark-cyan)] ">
                 |
             </span>
             <a href="#projects" class="px-4 py-2 text-[var(--light-cyan)] hover:text-[var(--pink)] transition-colors">
@@ -58,14 +59,14 @@
                    class="text-[var(--red)] tracking-wide transition-colors hover:text-white {{ app()->getLocale() === 'en' ? 'font-bold underline' : 'opacity-70' }}">
                     EN
                 </a>
-                <span class="text-[var(--dark-cyan)] opacity-40 select-none">
+                <span class="text-[var(--dark-cyan)] opacity-40 ">
                     /
                 </span>
                 <a href="{{ url('ja') }}"
                    class="text-[var(--red)] tracking-wide transition-colors hover:text-[var(--yellow)] {{ app()->getLocale() === 'ja' ? 'font-bold underline' : 'opacity-70' }}">
                     JA
                 </a>
-                <span class="text-[var(--dark-cyan)] opacity-40 select-none">
+                <span class="text-[var(--dark-cyan)] opacity-40 ">
                     /
                 </span>
                 <a href="{{ url('nl') }}"
@@ -75,7 +76,7 @@
             </div>
 
             <div
-                class="border-l-2 border-r-2 border-[var(--pink)] px-4 py-1 flex items-center gap-1.5 bg-[var(--pink)]/5 select-none">
+                class="border-l-2 border-r-2 border-[var(--pink)] px-4 py-1 flex items-center gap-1.5 bg-[var(--pink)]/5 ">
                 <span class="text-[var(--pink)] opacity-60">//</span>
                 <span class="text-white tracking-widest font-bold">
                     <span id="clock"></span>

@@ -1,4 +1,4 @@
-<footer class="relative w-full bg-black border-t-2 border-[var(--dark-cyan)] mt-20 px-6 lg:px-12 pb-8 pt-12 font-mono">
+<footer class="relative w-full bg-black border-t-2 border-[var(--dark-cyan)] font-mono select-none px-6 lg:px-12 pb-8 pt-12">
 
     <div class="absolute inset-x-0 top-0 h-4 pointer-events-none opacity-85 select-none px-6 lg:px-12">
         <div class="absolute left-6 top-0 w-[50%] h-[1px] bg-[var(--dark-cyan)]"></div>
