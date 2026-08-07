@@ -24,27 +24,27 @@
             </div>
 
             <div class="flex flex-col gap-2 md:items-center">
-                <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-widest text-[var(--light-cyan)]">
+                <div class="flex flex-wrap gap-x-6 gap-y-2 text-s uppercase tracking-widest text-[var(--light-cyan)]">
                     <a href="{{config('social.github')}}" target="_blank"
                        class="hover:text-[var(--pink)] transition-colors">
-                        // Github
+                        // <i class="fa-brands fa-github"></i>
                     </a>
                     <a href="{{config('social.linkedin')}}" target="_blank"
                        class="hover:text-[var(--pink)] transition-colors">
-                        // LinkedIn
+                        // <i class="fa-brands fa-linkedin"></i>
                     </a>
                     <a href="{{config('social.instagram')}}" target="_blank"
                        class="hover:text-[var(--pink)] transition-colors">
-                        // Instagram
+                        // <i class="fa-brands fa-instagram"></i>
                     </a>
                     <a href="#landing" class="hover:text-[var(--pink)] transition-colors">
-                        // TOP_OF_NODE
+                        // <i class="fa-solid fa-arrow-up"></i>
                     </a>
                 </div>
             </div>
 
             <div class="flex justify-center md:justify-end items-center w-full md:max-w-72 h-full min-h-[100px]">
-                <img src="{{ Vite::asset('resources/images/james.png') }}" alt="Arasaka Logo"
+                <img src="{{ Vite::asset('resources/images/james.png') }}" alt="James"
                      class="mx-auto md:mr-0 block max-h-16 object-contain">
             </div>
         </div>
@@ -59,7 +59,11 @@
             </div>
 
             <div>
-                © {{ date('Y') }} JAMES PINK-GYETT. ALL RIGHTS RESERVED.
+                © {{ date('Y') }} JAMES PINK-GYETT.
+                <br>
+                <a href="https://www.cdprojektred.com/" target="_blank">
+                    Inspired by Cyberpunk 2077.
+                </a>
             </div>
         </div>
 
