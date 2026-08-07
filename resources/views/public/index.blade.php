@@ -34,10 +34,9 @@
 
 @section('content')
 
-    <section
-        class="landing-section relative flex min-h-screen items-center overflow-hidden bg-[var(--yellow)] pb-24 pt-16"
-        id="landing">
-
+    <!-- Landing -->
+    <section class="landing-section relative flex min-h-screen items-center overflow-hidden bg-[var(--yellow)] pb-24 pt-16"
+             id="landing">
         <div class="absolute inset-0 pointer-events-none color-sweep opacity-10"></div>
         <div class="absolute inset-0 pointer-events-none opacity-5 rotate-1"
              style="background-image: url('{{ asset('images/bitmap.svg') }}');background-repeat: repeat;background-size: 50px 50px;"></div>
@@ -78,55 +77,195 @@
 
                 <a href="#about"
                    class="group mt-8 inline-flex items-stretch overflow-hidden border border-black transition-all duration-300 select-none">
-                    <span
-                        class="jamespg-font-boldest flex items-center px-8 py-4 text-md font-bold uppercase tracking-[0.25em] text-black transition-colors duration-300 group-hover:bg-black group-hover:text-white">
+                    <span class="jamespg-font-boldest flex items-center px-8 py-4 text-md font-bold uppercase tracking-[0.25em] text-black transition-colors duration-300 group-hover:bg-black group-hover:text-white">
                         {{ __('enums.about_me') }}_
                     </span>
-                    <span
-                        class="flex w-14 items-center text-lg justify-center bg-black text-white transition-all duration-300">
+                    <span class="flex w-14 items-center text-lg justify-center bg-black text-white transition-all duration-300">
                         🡣
                     </span>
                 </a>
+            </div>
+        </div>
+    </section>
 
-                <div class="mt-8 flex select-none">
-                    <div class="flex mr-10">
-                        <div class="w-0.5 bg-black"></div>
+    <!-- About -->
+    <section class="relative min-h-screen bg-black px-4 sm:px-8 lg:px-24 py-20 border-b border-[var(--grey-1)]"
+             id="about">
+        <div class="max-h-[600px] w-full mx-auto rounded-lg border border-[var(--grey-1)] bg-[#1e1e1e] font-mono shadow-2xl overflow-hidden flex flex-col">
 
-                        <div class="ml-4 flex flex-col gap-1">
-                            <span class="uppercase text-black tracking-widest text-sm md:text-base">
-                                {{ __('enums.location') }}_
-                            </span>
-                            <span class="uppercase text-black tracking-widest text-sm md:text-base">
-                                UK / GMT
+            <div class="flex items-center justify-between h-8 bg-[var(--ide-bg-1)] text-white text-xs select-none border-b border-gray-600 font-sans shrink-0">
+                <div class="flex items-center space-x-2 px-3">
+                    <i class="fa-regular fa-file-code text-gray-400 text-sm"></i>
+                    <span class="text-gray-300 font-normal">
+                        cv
+                    </span>
+                </div>
+
+                <div class="flex h-full items-stretch">
+                    <button class="px-4 hover:bg-gray-500 text-gray-300 flex items-center justify-center">
+                        <i class="fa-solid fa-minus text-[10px]"></i>
+                    </button>
+                    <button class="px-4 hover:bg-gray-500 text-gray-300 flex items-center justify-center">
+                        <i class="fa-regular fa-square text-[10px]"></i>
+                    </button>
+                    <button class="px-4 hover:bg-red-700 text-gray-300 flex items-center justify-center">
+                        <i class="fa-solid fa-xmark text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex flex-1 min-h-0">
+                <div class="flex-1 flex flex-col min-w-0">
+
+                    <div class="flex bg-[var(--ide-bg-1)] border-b border-[var(--grey-1)] text-sm shrink-0 select-none">
+                        <div class="bg-[var(--ide-bg-2)] text-white px-4 py-2 border-b-[2px] border-[var(--ide-accent-1)] flex items-center space-x-2">
+                            <i class="text-[var(--light-cyan)] fa-brands fa-php"></i>
+                            <span>
+                                index.blade.php
                             </span>
                         </div>
                     </div>
 
-                    <div class="flex mr-10">
-                        <div class="w-0.5 bg-black"></div>
+                    <div class="p-6 flex-1 bg-[var(--ide-bg-3)] text-sm md:text-base leading-snug overflow-auto min-w-0 font-mono [counter-reset:line]">
+                        <div class="text-gray-300 min-w-max">
 
-                        <div class="ml-4 flex flex-col gap-1">
-                            <span class="uppercase text-black tracking-widest text-sm md:text-base">
-                                {{ __('enums.age') }}_
-                            </span>
-                            <span class="uppercase text-black tracking-widest text-sm md:text-base">
-                                {{ (new DateTime())->diff(new DateTime("2004-01-01"))->y }}
-                            </span>
+                            <div class="flex items-start before:[counter-increment:line] before:content-[counter(line)] before:w-10 before:text-right before:pr-4 before:text-gray-600 before:select-none before:shrink-0">
+                                <span class="text-gray-400">
+                                    {
+                                </span>
+                            </div>
+
+                            <div class="flex items-start before:[counter-increment:line] before:content-[counter(line)] before:w-10 before:text-right before:pr-4 before:text-gray-600 before:select-none before:shrink-0">
+                                <span class="pl-4 text-[var(--ide-text-1)]">
+                                    "name"
+                                </span>
+                                <span class="text-gray-400">
+                                    :
+                                </span>
+                                <span class="text-[var(--ide-text-2)]">
+                                    "{{ __('enums.fn') }} Pink-Gyett"
+                                </span>
+                                <span class="text-gray-400">
+                                    ,
+                                </span>
+                            </div>
+
+                            <div class="flex items-start before:[counter-increment:line] before:content-[counter(line)] before:w-10 before:text-right before:pr-4 before:text-gray-600 before:select-none before:shrink-0">
+                                <span class="pl-4 text-[var(--ide-text-1)]">
+                                    "currentRole"
+                                </span>
+                                <span class="text-gray-400">
+                                    :
+                                </span>
+                                <span class="text-[var(--ide-text-2)]">
+                                    "{{ $mostRecentJob->title }} @ {{ $mostRecentJob->establishment }}"
+                                </span>
+                            </div>
+
+                            <?php /* foreach section will go here */ ?>
+
+                            <div class="flex items-start before:[counter-increment:line] before:content-[counter(line)] before:w-10 before:text-right before:pr-4 before:text-gray-600 before:select-none before:shrink-0">
+                                <span class="text-gray-400">
+                                    }
+                                </span>
+                                <span class="animate-pulse text-[var(--pink)] font-bold">
+                                    |
+                                </span>
+                            </div>
+
                         </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:block w-56 bg-[var(--ide-bg-1)] border-l border-gray-600 p-4 text-sm text-gray-400 select-none overflow-y-auto shrink-0">
+                    <div class="font-bold text-xs uppercase tracking-wider text-gray-500 mb-3 py-1">
+                        C:\Users\James\cv
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>app
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>bootstrap
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>config
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>database
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>lang
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>node_modules
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>public
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-4 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>resources
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-6 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>views
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-8 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>public
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-10 pr-4 py-1 bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-brands fa-php mr-1 text-[var(--light-cyan)]"></i>index.blade.php
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>routes
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>storage
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>tests
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>vendor
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-classic fa-gear mr-1 text-[var(--red)]"></i>.editorconfig
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-solid fa-align-left mr-1 text-[var(--red)]"></i>.env
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-solid fa-align-left mr-1 text-[var(--red)]"></i>.env.example
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-solid fa-align-left mr-1 text-[var(--red)]"></i>.gitattributes
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-solid fa-ban mr-1 text-[var(--red)]"></i>.gitignore
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-solid fa-align-left mr-1 text-[var(--red)]"></i>.npmrc
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-brands fa-php mr-1 text-[var(--light-cyan)]"></i>artisan
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-solid fa-code mr-1 text-[var(--yellow)]"></i>composer.json
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-solid fa-code mr-1 text-[var(--yellow)]"></i>composer.lock
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-solid fa-align-left mr-1 text-[var(--red)]"></i>LICENSE
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-solid fa-code mr-1 text-[var(--yellow)]"></i>package.json
+                    </div>
+                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
+                        <i class="fa-solid fa-code mr-1 text-[var(--yellow)]"></i>package-lock.json
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="about" class="min-h-screen bg-zinc-950 text-white flex items-center justify-center p-8">
-        <div class="max-w-3xl text-center">
-            <h2 class="text-4xl font-bold text-[var(--light-cyan)] uppercase tracking-wider mb-4">
-                // About Me_
-            </h2>
-        </div>
-    </section>
-
 @endsection
 
 @push('scripts')
