@@ -12,13 +12,13 @@
 }
 
 // Scrollbars
-html {
+* {
     scrollbar-width: thin;
     scrollbar-color: $pink #e5e7eb;
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
