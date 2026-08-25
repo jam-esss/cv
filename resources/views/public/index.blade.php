@@ -166,6 +166,76 @@
 
                                 <p class="pl-4">
                                     <span class="text-[var(--ide-text-1)]">
+                                        "glucose"
+                                    </span>
+                                    <span class="text-gray-400">
+                                        :
+                                    </span>
+                                    @if ($glucose)
+                                        <span class="text-gray-400">
+                                            {
+                                        </span>
+                                    @else
+                                        <span class="text-gray-400">
+                                            null
+                                        </span>
+                                    @endif
+                                </p>
+
+                                @if ($glucose)
+                                    <p class="pl-8">
+                                        <span class="text-[var(--ide-text-1)]">
+                                            "value"
+                                        </span>
+                                        <span class="text-gray-400">
+                                            :
+                                        </span>
+                                        <span class="text-[var(--ide-text-2)]">
+                                            {{ $glucose['value'] }}
+                                        </span>
+                                        <span class="text-gray-400">
+                                            ,
+                                        </span>
+                                    </p>
+
+                                    <p class="pl-8">
+                                        <span class="text-[var(--ide-text-1)]">
+                                            "unit"
+                                        </span>
+                                        <span class="text-gray-400">
+                                            :
+                                        </span>
+                                        <span class="text-[var(--ide-text-2)]">
+                                            "mmol/L"
+                                        </span>
+                                        <span class="text-gray-400">
+                                            ,
+                                        </span>
+                                    </p>
+
+                                    <p class="pl-8">
+                                        <span class="text-[var(--ide-text-1)]">
+                                            "trend"
+                                        </span>
+                                        <span class="text-gray-400">
+                                            :
+                                        </span>
+                                        <span class="text-[var(--ide-text-2)]">
+                                            "{{ $glucose['direction'] }}"
+                                        </span>
+                                    </p>
+
+                                    <a href="https://www.nightscoutfoundation.org/" class="pl-8 text-[var(--red)] underline" target="_blank">
+                                        #WeAreNotWaiting
+                                    </a>
+
+                                    <p class="pl-4 text-gray-400">
+                                        }
+                                    </p>
+                                @endif
+
+                                <p class="pl-4">
+                                    <span class="text-[var(--ide-text-1)]">
                                         "topArtists"
                                     </span>
                                     <span class="text-gray-400">
@@ -181,7 +251,7 @@
                                         </span>
                                         @if (!empty($artist['images'][0]['url']))
                                             <img src="{{ $artist['images'][0]['url'] }}" alt="{{ $artist['name'] }}"
-                                                 class="w-5 h-5 rounded-full object-cover">
+                                                 class="w-5 h-5 rounded-full object-cover select-none">
                                         @endif
                                         @if (!$loop->last)
                                             <span class="text-gray-400">,</span>

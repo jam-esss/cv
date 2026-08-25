@@ -4,11 +4,16 @@ namespace App\Http\Controllers\public;
 
 use App\Models\Experience;
 use Illuminate\Routing\Controller;
-use App\Services\SpotifyService;;
+use App\Services\SpotifyService;
+use App\Services\NightscoutService;
 
 class PublicSite extends Controller
 {
-    public function __invoke(string $locale, SpotifyService $spotify)
+    public function __invoke(
+        string $locale,
+        SpotifyService $spotify,
+        NightscoutService $nightscout
+    )
     {
         app()->setLocale($locale);
 
@@ -16,6 +21,7 @@ class PublicSite extends Controller
 
         $spotifyArtists = [];
         $spotifyTracks = [];
+        $glucose = null;
 
         try {
             $spotifyArtists = $spotify->topArtists();
@@ -24,10 +30,17 @@ class PublicSite extends Controller
             report($e);
         }
 
+        try {
+            $glucose = $nightscout->latestGlucose();
+        } catch (\Throwable $e) {
+            report($e);
+        }
+
         return view('public.index', [
             'mostRecentJob' => $mostRecentJob,
             'spotifyArtists' => $spotifyArtists,
             'spotifyTracks' => $spotifyTracks,
+            'glucose' => $glucose,
         ]);
     }
 

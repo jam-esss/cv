@@ -40,4 +40,9 @@ return [
         'client_secret' => env('SPOTIFY_CLIENT_SECRET'),
         'redirect_uri' => env('SPOTIFY_REDIRECT_URI'),
     ],
+
+    'nightscout' => [
+        'url' => env('NIGHTSCOUT_URL'),
+        'api_secret' => env('NIGHTSCOUT_API_SECRET'),
+    ],
 ];
