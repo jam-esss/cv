@@ -126,52 +126,103 @@
                         </div>
                     </div>
 
-                    <div class="p-6 flex-1 bg-[var(--ide-bg-3)] text-sm md:text-base leading-snug overflow-auto min-w-0 font-mono [counter-reset:line]">
-                        <div class="text-gray-300 min-w-max">
+                    <div class="p-6 flex-1 bg-[var(--ide-bg-3)] text-sm md:text-base leading-snug overflow-auto min-w-0 font-mono">
+                        <div class="text-gray-300 min-w-[500px] w-full">
 
-                            <div class="flex items-start before:[counter-increment:line] before:content-[counter(line)] before:w-10 before:text-right before:pr-4 before:text-gray-600 before:select-none before:shrink-0">
-                                <span class="text-gray-400">
+                            <div>
+                                <p class="text-gray-400">
                                     {
-                                </span>
+                                </p>
+
+                                <p class="pl-4">
+                                    <span class="text-[var(--ide-text-1)]">
+                                        "name"
+                                    </span>
+                                    <span class="text-gray-400">
+                                        :
+                                    </span>
+                                    <span class="text-[var(--ide-text-2)]">
+                                        "{{ __('enums.fn') }} Pink-Gyett"
+                                    </span>
+                                    <span class="text-gray-400">
+                                        ,
+                                    </span>
+                                </p>
+
+                                <p class="pl-4">
+                                    <span class="text-[var(--ide-text-1)]">
+                                        "currentRole"
+                                    </span>
+                                    <span class="text-gray-400">
+                                        :
+                                    </span>
+                                    <span class="text-[var(--ide-text-2)]">
+                                        "{{ $mostRecentJob->title }} @ {{ $mostRecentJob->establishment }}"
+                                    </span>
+                                    <span class="text-gray-400">
+                                        ,
+                                    </span>
+                                </p>
+
+                                <p class="pl-4">
+                                    <span class="text-[var(--ide-text-1)]">
+                                        "topArtists"
+                                    </span>
+                                    <span class="text-gray-400">
+                                        :
+                                        [
+                                    </span>
+                                </p>
+
+                                @foreach ($spotifyArtists as $artist)
+                                    <p class="pl-8 flex items-center gap-2">
+                                        <span class="text-[var(--ide-text-2)]">
+                                            "{{ $artist['name'] }}"
+                                        </span>
+                                        @if (!empty($artist['images'][0]['url']))
+                                            <img src="{{ $artist['images'][0]['url'] }}" alt="{{ $artist['name'] }}"
+                                                 class="w-5 h-5 rounded-full object-cover">
+                                        @endif
+                                        @if (!$loop->last)
+                                            <span class="text-gray-400">,</span>
+                                        @endif
+                                    </p>
+                                @endforeach
+
+
+                                <p class="pl-4 text-gray-400">
+                                    ],
+                                </p>
+
+                                <p class="pl-4">
+                                    <span class="text-[var(--ide-text-1)]">
+                                        "topTracks"
+                                    </span>
+                                    <span class="text-gray-400">
+                                        :
+                                        [
+                                    </span>
+                                </p>
+
+                                @foreach ($spotifyTracks as $track)
+                                    <p class="pl-8">
+                                        <span class="text-[var(--ide-text-2)]">
+                                            "{{ $track['name'] }} — {{ $track['artists'][0]['name'] }}"
+                                        </span>@if (!$loop->last)<span class="text-gray-400">,</span>@endif
+                                    </p>
+                                @endforeach
+
+                                <p class="pl-4 text-gray-400">
+                                    ]
+                                </p>
+
+                                <p class="text-gray-400">
+                                    }
+                                </p>
                             </div>
 
-                            <div class="flex items-start before:[counter-increment:line] before:content-[counter(line)] before:w-10 before:text-right before:pr-4 before:text-gray-600 before:select-none before:shrink-0">
-                                <span class="pl-4 text-[var(--ide-text-1)]">
-                                    "name"
-                                </span>
-                                <span class="text-gray-400">
-                                    :
-                                </span>
-                                <span class="text-[var(--ide-text-2)]">
-                                    "{{ __('enums.fn') }} Pink-Gyett"
-                                </span>
-                                <span class="text-gray-400">
-                                    ,
-                                </span>
-                            </div>
-
-                            <div class="flex items-start before:[counter-increment:line] before:content-[counter(line)] before:w-10 before:text-right before:pr-4 before:text-gray-600 before:select-none before:shrink-0">
-                                <span class="pl-4 text-[var(--ide-text-1)]">
-                                    "currentRole"
-                                </span>
-                                <span class="text-gray-400">
-                                    :
-                                </span>
-                                <span class="text-[var(--ide-text-2)]">
-                                    "{{ $mostRecentJob->title }} @ {{ $mostRecentJob->establishment }}"
-                                </span>
-                            </div>
 
                             <?php /* foreach section will go here */ ?>
-
-                            <div class="flex items-start before:[counter-increment:line] before:content-[counter(line)] before:w-10 before:text-right before:pr-4 before:text-gray-600 before:select-none before:shrink-0">
-                                <span class="text-gray-400">
-                                    }
-                                </span>
-                                <span class="animate-pulse text-[var(--pink)] font-bold">
-                                    |
-                                </span>
-                            </div>
 
                         </div>
                     </div>
@@ -181,87 +232,45 @@
                     <div class="font-bold text-xs uppercase tracking-wider text-gray-500 mb-3 py-1">
                         C:\Users\James\cv
                     </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>app
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>bootstrap
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>config
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>database
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>lang
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>node_modules
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>public
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-4 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>resources
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-6 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>views
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-8 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>public
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-10 pr-4 py-1 bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-brands fa-php mr-1 text-[var(--light-cyan)]"></i>index.blade.php
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>routes
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>storage
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>tests
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-regular fa-folder mr-1 text-[var(--pink)]"></i>vendor
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-classic fa-gear mr-1 text-[var(--red)]"></i>.editorconfig
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-solid fa-align-left mr-1 text-[var(--red)]"></i>.env
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-solid fa-align-left mr-1 text-[var(--red)]"></i>.env.example
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-solid fa-align-left mr-1 text-[var(--red)]"></i>.gitattributes
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-solid fa-ban mr-1 text-[var(--red)]"></i>.gitignore
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-solid fa-align-left mr-1 text-[var(--red)]"></i>.npmrc
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-brands fa-php mr-1 text-[var(--light-cyan)]"></i>artisan
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-solid fa-code mr-1 text-[var(--yellow)]"></i>composer.json
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-solid fa-code mr-1 text-[var(--yellow)]"></i>composer.lock
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-solid fa-align-left mr-1 text-[var(--red)]"></i>LICENSE
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-solid fa-code mr-1 text-[var(--yellow)]"></i>package.json
-                    </div>
-                    <div class="flex items-center space-x-2 text-white pl-2 pr-4 py-1 hover:bg-[var(--ide-accent-1)] rounded cursor-pointer">
-                        <i class="fa-solid fa-code mr-1 text-[var(--yellow)]"></i>package-lock.json
-                    </div>
+
+                    @php
+                        $files = [
+                            ['name' => 'app', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => 'bootstrap', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => 'config', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => 'database', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => 'lang', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => 'node_modules', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => 'public', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => 'resources', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-4'],
+                            ['name' => 'views', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-6'],
+                            ['name' => 'public', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-8'],
+                            ['name' => 'index.blade.php', 'icon' => 'fa-brands fa-php', 'color' => 'var(--light-cyan)', 'indent' => 'pl-10', 'active' => true],
+                            ['name' => 'routes', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => 'storage', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => 'tests', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => 'vendor', 'icon' => 'fa-regular fa-folder', 'color' => 'var(--pink)', 'indent' => 'pl-2'],
+                            ['name' => '.editorconfig', 'icon' => 'fa-classic fa-gear', 'color' => 'var(--red)', 'indent' => 'pl-2'],
+                            ['name' => '.env', 'icon' => 'fa-solid fa-align-left', 'color' => 'var(--red)', 'indent' => 'pl-2'],
+                            ['name' => '.env.example', 'icon' => 'fa-solid fa-align-left', 'color' => 'var(--red)', 'indent' => 'pl-2'],
+                            ['name' => '.gitattributes', 'icon' => 'fa-solid fa-align-left', 'color' => 'var(--red)', 'indent' => 'pl-2'],
+                            ['name' => '.gitignore', 'icon' => 'fa-solid fa-ban', 'color' => 'var(--red)', 'indent' => 'pl-2'],
+                            ['name' => '.npmrc', 'icon' => 'fa-solid fa-align-left', 'color' => 'var(--red)', 'indent' => 'pl-2'],
+                            ['name' => 'artisan', 'icon' => 'fa-brands fa-php', 'color' => 'var(--light-cyan)', 'indent' => 'pl-2'],
+                            ['name' => 'composer.json', 'icon' => 'fa-solid fa-code', 'color' => 'var(--yellow)', 'indent' => 'pl-2'],
+                            ['name' => 'composer.lock', 'icon' => 'fa-solid fa-code', 'color' => 'var(--yellow)', 'indent' => 'pl-2'],
+                            ['name' => 'LICENSE', 'icon' => 'fa-solid fa-align-left', 'color' => 'var(--red)', 'indent' => 'pl-2'],
+                            ['name' => 'package.json', 'icon' => 'fa-solid fa-code', 'color' => 'var(--yellow)', 'indent' => 'pl-2'],
+                            ['name' => 'package-lock.json', 'icon' => 'fa-solid fa-code', 'color' => 'var(--yellow)', 'indent' => 'pl-2'],
+                        ];
+                    @endphp
+
+                    @foreach($files as $file)
+                        <div class="flex items-start space-x-2 text-white {{ $file['indent'] }} pr-4 py-1 {{ !empty($file['active']) ? 'bg-[var(--ide-accent-1)]' : 'hover:bg-[var(--ide-accent-1)]' }} rounded cursor-pointer">
+                            <i class="{{ $file['icon'] }} mr-1 text-[{{ $file['color'] }}] shrink-0 mt-0.5"></i>
+                            <span class="truncate">{{ $file['name'] }}</span>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
