@@ -33,10 +33,6 @@
                        class="hover:text-[var(--pink)] transition-colors">
                         // <i class="fa-brands fa-linkedin"></i>
                     </a>
-                    <a href="{{config('social.instagram')}}" target="_blank"
-                       class="hover:text-[var(--pink)] transition-colors">
-                        // <i class="fa-brands fa-instagram"></i>
-                    </a>
                     <a href="#landing" class="hover:text-[var(--pink)] transition-colors">
                         // <i class="fa-solid fa-arrow-up"></i>
                     </a>
