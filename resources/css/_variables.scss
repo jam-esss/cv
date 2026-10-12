@@ -44,3 +44,29 @@ $navbar-height: 64px;
         opacity: 0;
     }
 }
+
+.color-sweep {
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        var(--light-cyan) 30%,
+        var(--red) 50%,
+        var(--pink) 70%,
+        transparent 100%
+    );
+
+    width: 200%;
+    height: 100%;
+    filter: blur(40px);
+    mix-blend-mode: multiply;
+    animation: colorSweep 6s linear infinite;
+}
+
+@keyframes colorSweep {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
