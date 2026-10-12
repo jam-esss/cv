@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\public;
 
+use App\Models\About;
 use App\Models\Experience;
 use App\Models\WebsiteSetting;
 use Illuminate\Routing\Controller;
@@ -21,6 +22,7 @@ class PublicSite extends Controller
         $landingBackground = WebsiteSetting::where('key', 'landing_background')->value('value');
         $mostRecentJob = Experience::latest()->first();
 
+        $aboutModules = About::all();
         $spotifyArtists = [];
         $spotifyTracks = [];
         $glucose = null;
@@ -41,6 +43,7 @@ class PublicSite extends Controller
         return view('public.index', [
             'mostRecentJob' => $mostRecentJob,
             'landingBackground' => $landingBackground,
+            'aboutModules' => $aboutModules,
             'spotifyArtists' => $spotifyArtists,
             'spotifyTracks' => $spotifyTracks,
             'glucose' => $glucose,

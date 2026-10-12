@@ -3,37 +3,11 @@
 @section('title', 'James Pink-Gyett_')
 
 @push('styles')
-    <style>
-        .color-sweep {
-            background: linear-gradient(
-                120deg,
-                transparent 0%,
-                var(--light-cyan) 30%,
-                var(--red) 50%,
-                var(--pink) 70%,
-                transparent 100%
-            );
 
-            width: 200%;
-            height: 100%;
-            filter: blur(40px);
-            mix-blend-mode: multiply;
-            animation: colorSweep 6s linear infinite;
-        }
-
-        @keyframes colorSweep {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(100%);
-            }
-        }
-    </style>
 @endpush
 
 @section('content')
-    <!-- Landing -->
+    <?php /* Landing */ ?>
     <section
         class="landing-section relative flex min-h-screen items-center overflow-hidden {{ $landingBackground ? 'bg-cover bg-center bg-no-repeat' : 'bg-[var(--yellow)]' }} pb-24 pt-16"
         id="landing"
@@ -78,7 +52,7 @@
         </div>
     </section>
 
-    <!-- About -->
+    <?php /* About */ ?>
     <section class="relative min-h-screen bg-black px-4 sm:px-8 lg:px-24 py-20 border-b border-[var(--grey-1)]"
              id="about">
         <div
@@ -157,6 +131,30 @@
                                         ,
                                     </span>
                                 </p>
+
+                                @if ($aboutModules)
+                                    @foreach ($aboutModules as $aboutModule)
+                                        <p class="pl-4">
+                                            <span class="text-[var(--ide-text-1)]">
+                                                "{{ $aboutModule->title }}"
+                                            </span>
+                                            <span class="text-gray-400">
+                                                =
+                                            </span>
+                                            <span class="text-gray-400">
+                                                [
+                                            </span>
+                                        </p>
+
+                                        <p class="pl-8 text-[var(--ide-text-2)]">
+                                            "{{ $aboutModule->description }}"
+                                        </p>
+
+                                        <p class="pl-4 text-gray-400">
+                                            ],
+                                        </p>
+                                    @endforeach
+                                @endif
 
                                 <p class="pl-4">
                                     <span class="text-[var(--ide-text-1)]">
@@ -352,9 +350,13 @@
             </div>
         </div>
     </section>
+
+    <?php /* Experience */ ?>
+
+    <?php /* Projects */ ?>
 @endsection
 
 @push('scripts')
 
 @endpush
-<?php /* TODO: localise nightscout and spotify integrations, add a description section, fix overflow on mobile, clean up */ ?>
+<?php /* TODO: localise nightscout and spotify integrations, clean up */ ?>
